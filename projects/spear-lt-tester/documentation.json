@@ -4,7 +4,7 @@
         {
             "name": "User",
             "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
-            "file": "projects/header/src/stories/User.ts",
+            "file": "projects/spear-lt-tester/src/stories/User.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -15,6 +15,27 @@
         }
     ],
     "injectables": [
+        {
+            "name": "FooterService",
+            "id": "injectable-FooterService-3c3047c8d382829874b0a0e8bfe4027c2a1c7c8926c39104b5435aeef19e04589701dd891fc409b423c303120b10437b30c579e8b1ebfed99ca68e17684bf357",
+            "file": "projects/footer/src/lib/footer.service.ts",
+            "properties": [],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class FooterService {\n\n  constructor() { }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 6
+            },
+            "type": "injectable"
+        },
         {
             "name": "HeaderService",
             "id": "injectable-HeaderService-6866e7bf72480f5ba52cdd9cc2999562bada60356ced67041a5e0a54f9ee9ba9ba858d233058f23d867303d17d3718e5995e04613cf7076b5a8deb49936d58c4",
@@ -43,9 +64,60 @@
     "directives": [],
     "components": [
         {
+            "name": "AppComponent",
+            "id": "component-AppComponent-1b9a4c91473e1393a39b6e61d864e505a28e22df201e1636f616e85da03b4f85fb15619f9fce396a1003885c03db8fd6945d36ae519cb8175351af3245aeb061",
+            "file": "projects/spear-lt-tester/src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "Layout",
+                    "defaultValue": "Layout",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { Layout } from 'projects/header/src/consts/layout.enum';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  Layout: typeof Layout = Layout;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<slt-header heading=\"Bills Steakhouse\" subheading=\"Great Smoked Steaks\" logoUrl=\"assets/logo.jpg\" logoWidth=\"200px\" [layout]=\"Layout.column\"></slt-header>\n"
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-a53fd738b978780d39fb5fcc9ae4cfe0088e57a1f6ce674862d57dab9192140bd1c05548a9910db0469a431142886e658ff2e761f15781b2ad430e58d64724d0",
-            "file": "projects/header/src/stories/button.component.ts",
+            "file": "projects/spear-lt-tester/src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -167,8 +239,48 @@
             }
         },
         {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-6a417569f1d972ae072312e4cbbb681a72cde390fec4d1f381d8deeb5e6f5dd1c05c70a29eb9842027f28490f44f279c20ccf57211a709a3aceec06d3bdee4f7",
+            "file": "projects/footer/src/lib/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "slt-footer",
+            "styleUrls": [
+                "footer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'slt-footer',\n  templateUrl: 'footer.component.html',\n  styleUrls: [ 'footer.component.scss' ]\n})\nexport class FooterComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": ""
+        },
+        {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-1db490ba699a96fb8ddb75675d0ad702cc516c0f5c9933165874153a8b678f38926a4c07cfd4b9d09f58af308ae225b151d2281fa9dac244e0cbd87e9b8e0b2d",
+            "id": "component-HeaderComponent-9e308ce57e69cea9b72e377f0a9de1a81e20eaa435a0243b5521d50d1d022a3476f68b6dfce323f4f1902697a2af89419510dbb4a11a83ccfddc5b901033b7cd",
             "file": "projects/header/src/lib/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -189,7 +301,7 @@
                     "name": "heading",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -197,7 +309,9 @@
                     "name": "layout",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "rawdescription": "\n\nThe layout for the component\n",
+                    "description": "<p>The layout for the component</p>\n",
+                    "line": 14,
                     "type": "Layout",
                     "decorators": []
                 },
@@ -205,7 +319,9 @@
                     "name": "logoUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "rawdescription": "\n\nURL used for the logo\n",
+                    "description": "<p>URL used for the logo</p>\n",
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 },
@@ -213,7 +329,9 @@
                     "name": "logoWidth",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained)\n",
+                    "description": "<p>Width used for the logo (aspect ratio will be maintained)</p>\n",
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 },
@@ -221,7 +339,7 @@
                     "name": "subheading",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 }
@@ -236,7 +354,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 28
                 }
             ],
             "methodsClass": [],
@@ -247,7 +365,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { Layout } from '../consts/layout.enum';\n\n@Component({\n  selector: 'slt-header',\n  templateUrl: 'header.component.html',\n  styleUrls: [ 'header.component.scss' ]\n})\nexport class HeaderComponent {\n  @Input() layout: Layout;\n  @Input() logoUrl: string;\n  @Input() logoWidth: string;\n  @Input() heading: string;\n  @Input() subheading: string;\n\n  Layout: typeof Layout = Layout;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { Layout } from '../consts/layout.enum';\n\n@Component({\n  selector: 'slt-header',\n  templateUrl: 'header.component.html',\n  styleUrls: [ 'header.component.scss' ]\n})\nexport class HeaderComponent {\n  /**\n   * The layout for the component\n   */\n  @Input() layout: Layout;\n\n  /**\n   * URL used for the logo\n   */\n  @Input() logoUrl: string;\n\n  /**\n   * Width used for the logo (aspect ratio will be maintained)\n   */\n  @Input() logoWidth: string;\n  @Input() heading: string;\n  @Input() subheading: string;\n\n  Layout: typeof Layout = Layout;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -261,7 +379,7 @@
         {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-3d494fd89671305c6be07de00e019efdf08f2e36c2169e5fb75a5acdb2841da927e3ef3cbd21cc18f478373a784b1fb90e8b63b9df4b3498a75b652bd9c37b38-1",
-            "file": "projects/header/src/stories/header.component.ts",
+            "file": "projects/spear-lt-tester/src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -337,7 +455,7 @@
         {
             "name": "PageComponent",
             "id": "component-PageComponent-badb6d8cee577661da79ba82ad8f599604afd40fa34e36c7b88d71d77a4fbc7184228cba2f0d73e255d0b7bc51c4c7a8e7b0128b3624aeb0255abab9030fa59a",
-            "file": "projects/header/src/stories/page.component.ts",
+            "file": "projects/spear-lt-tester/src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -417,6 +535,98 @@
     ],
     "modules": [
         {
+            "name": "AppModule",
+            "id": "module-AppModule-148fb823a604ed2e9af4e8e3b278f0f0103744bcb9c033d9b2c0e0124c0e73be470d40e3455dd598110b431b7430895ab2a860660054bd567ccb6b124c2cc390",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/spear-lt-tester/src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\nimport { HeaderModule } from 'header';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    HeaderModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "HeaderModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FooterModule",
+            "id": "module-FooterModule-473ca4826d7bf613b6f5f46593e8ff863f171112e1d9624c2132f8cd7e1cc2c0cd82a4cef37b4543581bb5c722e64b6ba98ac70b2489fc3f2b05bc7ce6000ba9",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/footer/src/lib/footer.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FooterComponent } from './footer.component';\n\n\n\n@NgModule({\n  declarations: [\n    FooterComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    FooterComponent\n  ]\n})\nexport class FooterModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "HeaderModule",
             "id": "module-HeaderModule-92baff6a073f02fa808f1f44a4fa67880ad89c36144f62c3ec96279a85234251325f7edf01e89d5e1343a03819766c580eacd6aab82a964715124e62b365311a",
             "description": "",
@@ -467,7 +677,7 @@
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Button.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -477,7 +687,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Header.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -487,7 +697,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Page.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -497,7 +707,7 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Header.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -507,7 +717,7 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Page.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -517,7 +727,17 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Button.stories.ts",
+                "file": "projects/header/src/lib/Header_new.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\r\n  title: 'Slut Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Button>",
@@ -527,7 +747,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Header.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Header>",
@@ -537,7 +757,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Page.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<Page>",
@@ -547,7 +767,7 @@
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/.storybook/preview.ts",
+                "file": "projects/spear-lt-tester/.storybook/preview.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
@@ -557,7 +777,17 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Button.stories.ts",
+                "file": "projects/header/src/lib/Header_new.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoWidth: '200px',\r\n    heading: \"\",\r\n    subheading: \"\"\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -567,7 +797,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Button.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -577,7 +807,7 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/stories/Button.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -590,8 +820,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<HeaderComponent>",
+                "file": "projects/header/src/lib/Header_new.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
-                "file": "projects/header/src/stories/Button.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -602,7 +843,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Header>",
-                "file": "projects/header/src/stories/Header.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -613,7 +854,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Page>",
-                "file": "projects/header/src/stories/Page.stories.ts",
+                "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -644,12 +885,12 @@
             }
         ],
         "groupedVariables": {
-            "projects/header/src/stories/Button.stories.ts": [
+            "projects/spear-lt-tester/src/stories/Button.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Button.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -659,7 +900,7 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Button.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Button>",
@@ -669,7 +910,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Button.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -679,7 +920,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Button.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -689,19 +930,19 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Button.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
                 }
             ],
-            "projects/header/src/stories/Header.stories.ts": [
+            "projects/spear-lt-tester/src/stories/Header.stories.ts": [
                 {
                     "name": "LoggedIn",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Header.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -711,7 +952,7 @@
                     "name": "LoggedOut",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Header.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -721,19 +962,19 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Header.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Header>",
                     "defaultValue": "{\n  title: 'Example/Header',\n  component: Header,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\n  tags: ['autodocs'],\n  render: (args) => ({ props: args }),\n  decorators: [\n    moduleMetadata({\n      declarations: [Button],\n      imports: [CommonModule],\n    }),\n  ],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "projects/header/src/stories/Page.stories.ts": [
+            "projects/spear-lt-tester/src/stories/Page.stories.ts": [
                 {
                     "name": "LoggedIn",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Page.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -743,7 +984,7 @@
                     "name": "LoggedOut",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Page.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -753,19 +994,41 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/src/stories/Page.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<Page>",
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
-            "projects/header/.storybook/preview.ts": [
+            "projects/header/src/lib/Header_new.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/Header_new.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HeaderComponent>",
+                    "defaultValue": "{\r\n  title: 'Slut Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/Header_new.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoWidth: '200px',\r\n    heading: \"\",\r\n    subheading: \"\"\r\n  },\r\n}"
+                }
+            ],
+            "projects/spear-lt-tester/.storybook/preview.ts": [
                 {
                     "name": "preview",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/header/.storybook/preview.ts",
+                    "file": "projects/spear-lt-tester/.storybook/preview.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
@@ -800,39 +1063,52 @@
             ]
         },
         "groupedTypeAliases": {
-            "projects/header/src/stories/Button.stories.ts": [
+            "projects/header/src/lib/Header_new.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderComponent>",
+                    "file": "projects/header/src/lib/Header_new.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/spear-lt-tester/src/stories/Button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Button>",
-                    "file": "projects/header/src/stories/Button.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 177
                 }
             ],
-            "projects/header/src/stories/Header.stories.ts": [
+            "projects/spear-lt-tester/src/stories/Header.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Header>",
-                    "file": "projects/header/src/stories/Header.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 177
                 }
             ],
-            "projects/header/src/stories/Page.stories.ts": [
+            "projects/spear-lt-tester/src/stories/Page.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Page>",
-                    "file": "projects/header/src/stories/Page.stories.ts",
+                    "file": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -843,15 +1119,43 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 5,
         "status": "low",
         "files": [
             {
-                "filePath": "projects/header/.storybook/preview.ts",
+                "filePath": "projects/footer/src/lib/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/footer/src/lib/footer.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "FooterService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/Header_new.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "preview",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/Header_new.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -861,9 +1165,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
+                "coveragePercent": 42,
+                "coverageCount": "3/7",
+                "status": "medium"
             },
             {
                 "filePath": "projects/header/src/lib/header.service.ts",
@@ -875,7 +1179,26 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Button.stories.ts",
+                "filePath": "projects/spear-lt-tester/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/spear-lt-tester/src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -885,7 +1208,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Button.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -895,7 +1218,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Button.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -905,7 +1228,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Button.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -915,7 +1238,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Button.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -925,7 +1248,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Header.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -935,7 +1258,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Header.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -945,7 +1268,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Header.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -955,7 +1278,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Page.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -965,7 +1288,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Page.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -975,7 +1298,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/Page.stories.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -985,7 +1308,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/User.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/User.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",
@@ -994,7 +1317,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/button.component.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -1003,7 +1326,7 @@
                 "status": "very-good"
             },
             {
-                "filePath": "projects/header/src/stories/header.component.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
@@ -1012,7 +1335,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/stories/page.component.ts",
+                "filePath": "projects/spear-lt-tester/src/stories/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PageComponent",

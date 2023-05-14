@@ -33,36 +33,6 @@
               "zone.js/testing"
             ]
           }
-        },
-        "storybook": {
-          "builder": "@storybook/angular:start-storybook",
-          "options": {
-            "configDir": "projects/header/.storybook",
-            "browserTarget": "header:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/header"
-            ],
-            "port": 6006
-          }
-        },
-        "build-storybook": {
-          "builder": "@storybook/angular:build-storybook",
-          "options": {
-            "configDir": "projects/header/.storybook",
-            "browserTarget": "header:build",
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/header"
-            ],
-            "outputDir": "dist/storybook/header"
-          }
         }
       }
     },
@@ -192,6 +162,36 @@
               "projects/spear-lt-tester/src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/spear-lt-tester/.storybook",
+            "browserTarget": "spear-lt-tester:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/spear-lt-tester"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/spear-lt-tester/.storybook",
+            "browserTarget": "spear-lt-tester:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/spear-lt-tester"
+            ],
+            "outputDir": "dist/storybook/spear-lt-tester"
           }
         }
       }
