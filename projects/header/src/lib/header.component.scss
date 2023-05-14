@@ -1,0 +1,33 @@
+.branding {
+  display: flex;
+  flex-direction: row;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  .heading {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.row {
+      flex-direction: row;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
+  }
+
+  .logo {
+    padding: 15px 20px;
+  }
+}

@@ -1,3 +1,9 @@
-<p>
-    Header Works!
-</p>
+<section class="header">
+  <section class="branding" [ngClass]="{ column: layout === Layout.column }">
+    <img [src]="logoUrl" [attr.width]="logoWidth" />
+    <div class="heading">
+      <h1>{{heading}}</h1>
+      <h2>{{subheading}}</h2>
+    </div>
+  </section>
+</section>
