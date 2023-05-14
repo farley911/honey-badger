@@ -4,14 +4,9 @@ You know what Spear LT | Honey Badger is; it's Fight Club.
 
 ## Storybook
 
-### initialize project
-```
-$ npx storybook@latest init
-```
-
 ### Running Storybook
 ```
-$ ng run <project>:storybook
+$ ng run spear-lt-tester:storybook
 ```
 
 ## NPM

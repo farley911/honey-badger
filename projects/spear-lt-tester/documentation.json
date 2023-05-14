@@ -65,7 +65,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-1b9a4c91473e1393a39b6e61d864e505a28e22df201e1636f616e85da03b4f85fb15619f9fce396a1003885c03db8fd6945d36ae519cb8175351af3245aeb061",
+            "id": "component-AppComponent-0023012fe875717a39fd6a81eb76df92d366cebabeacad73a7bb4c6c567da6220dc1a721c6a135eb8a8e0929cfad2c4082a160db6ebe8747bb977b77ab1ab8f7",
             "file": "projects/spear-lt-tester/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -83,18 +83,7 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "Layout",
-                    "defaultValue": "Layout",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -103,7 +92,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Layout } from 'projects/header/src/consts/layout.enum';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  Layout: typeof Layout = Layout;\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -112,7 +101,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<slt-header heading=\"Bills Steakhouse\" subheading=\"Great Smoked Steaks\" logoUrl=\"assets/logo.jpg\" logoWidth=\"200px\" [layout]=\"Layout.column\"></slt-header>\n"
+            "templateData": ""
         },
         {
             "name": "ButtonComponent",
@@ -280,7 +269,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-9e308ce57e69cea9b72e377f0a9de1a81e20eaa435a0243b5521d50d1d022a3476f68b6dfce323f4f1902697a2af89419510dbb4a11a83ccfddc5b901033b7cd",
+            "id": "component-HeaderComponent-c3b60df77e48290c414b8a36bddfd8e2a381ca54d7d7421abe56de71edbdafc1f897f88f0bd65fade29172c0a467cdcb4ce866dca031b85be4857dc0e3269a1b",
             "file": "projects/header/src/lib/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -301,7 +290,9 @@
                     "name": "heading",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "rawdescription": "\n\nHeading, most likely used for the clients name.\n",
+                    "description": "<p>Heading, most likely used for the clients name.</p>\n",
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -309,8 +300,8 @@
                     "name": "layout",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nThe layout for the component\n",
-                    "description": "<p>The layout for the component</p>\n",
+                    "rawdescription": "\n\nThe layout for the component.\n",
+                    "description": "<p>The layout for the component.</p>\n",
                     "line": 14,
                     "type": "Layout",
                     "decorators": []
@@ -319,8 +310,8 @@
                     "name": "logoUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nURL used for the logo\n",
-                    "description": "<p>URL used for the logo</p>\n",
+                    "rawdescription": "\n\nURL used for the logo.\n",
+                    "description": "<p>URL used for the logo.</p>\n",
                     "line": 19,
                     "type": "string",
                     "decorators": []
@@ -329,8 +320,8 @@
                     "name": "logoWidth",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained)\n",
-                    "description": "<p>Width used for the logo (aspect ratio will be maintained)</p>\n",
+                    "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained).\n",
+                    "description": "<p>Width used for the logo (aspect ratio will be maintained).</p>\n",
                     "line": 24,
                     "type": "string",
                     "decorators": []
@@ -339,7 +330,9 @@
                     "name": "subheading",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "rawdescription": "\n\nOptional subheading for clients with one.\n",
+                    "description": "<p>Optional subheading for clients with one.</p>\n",
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 }
@@ -353,8 +346,9 @@
                     "deprecationMessage": "",
                     "type": "",
                     "optional": false,
-                    "description": "",
-                    "line": 28
+                    "description": "<p>Used by the view to map the enum to the input value</p>\n",
+                    "line": 39,
+                    "rawdescription": "\n\nUsed by the view to map the enum to the input value\n"
                 }
             ],
             "methodsClass": [],
@@ -365,7 +359,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { Layout } from '../consts/layout.enum';\n\n@Component({\n  selector: 'slt-header',\n  templateUrl: 'header.component.html',\n  styleUrls: [ 'header.component.scss' ]\n})\nexport class HeaderComponent {\n  /**\n   * The layout for the component\n   */\n  @Input() layout: Layout;\n\n  /**\n   * URL used for the logo\n   */\n  @Input() logoUrl: string;\n\n  /**\n   * Width used for the logo (aspect ratio will be maintained)\n   */\n  @Input() logoWidth: string;\n  @Input() heading: string;\n  @Input() subheading: string;\n\n  Layout: typeof Layout = Layout;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { Layout } from '../consts/layout.enum';\n\n@Component({\n  selector: 'slt-header',\n  templateUrl: 'header.component.html',\n  styleUrls: [ 'header.component.scss' ]\n})\nexport class HeaderComponent {\n  /**\n   * The layout for the component.\n   */\n  @Input() layout: Layout;\n\n  /**\n   * URL used for the logo.\n   */\n  @Input() logoUrl: string;\n\n  /**\n   * Width used for the logo (aspect ratio will be maintained).\n   */\n  @Input() logoWidth: string;\n\n  /**\n   * Heading, most likely used for the clients name.\n   */\n  @Input() heading: string;\n\n  /**\n   * Optional subheading for clients with one.\n   */\n  @Input() subheading: string;\n\n  /**\n   * Used by the view to map the enum to the input value\n   */\n  Layout: typeof Layout = Layout;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -536,13 +530,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-148fb823a604ed2e9af4e8e3b278f0f0103744bcb9c033d9b2c0e0124c0e73be470d40e3455dd598110b431b7430895ab2a860660054bd567ccb6b124c2cc390",
+            "id": "module-AppModule-565c9964c685eef6251c3d75d210793427cf56cb5cc91e6894295d15cf7b6f05688de1bcc8f4b301d34bc1b72d43070af6d572c3e0184a7e30190a57551b2fe8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/spear-lt-tester/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\nimport { HeaderModule } from 'header';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    HeaderModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -558,11 +552,7 @@
                 },
                 {
                     "type": "imports",
-                    "elements": [
-                        {
-                            "name": "HeaderModule"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "exports",
@@ -674,6 +664,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Column",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -727,11 +727,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/Header_new.stories.ts",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Slut Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: 'Spear LT | Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -777,21 +777,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/Header_new.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoWidth: '200px',\r\n    heading: \"\",\r\n    subheading: \"\"\r\n  },\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/spear-lt-tester/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
+            },
+            {
+                "name": "Row",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -821,7 +821,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/header/src/lib/Header_new.stories.ts",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -868,12 +868,14 @@
                     {
                         "name": "column",
                         "deprecated": false,
-                        "deprecationMessage": ""
+                        "deprecationMessage": "",
+                        "value": "column"
                     },
                     {
                         "name": "row",
                         "deprecated": false,
-                        "deprecationMessage": ""
+                        "deprecationMessage": "",
+                        "value": "row"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -885,6 +887,38 @@
             }
         ],
         "groupedVariables": {
+            "projects/header/src/lib/header.stories.ts": [
+                {
+                    "name": "Column",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HeaderComponent>",
+                    "defaultValue": "{\r\n  title: 'Spear LT | Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  }\r\n}"
+                },
+                {
+                    "name": "Row",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                }
+            ],
             "projects/spear-lt-tester/src/stories/Button.stories.ts": [
                 {
                     "name": "Large",
@@ -1001,28 +1035,6 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
-            "projects/header/src/lib/Header_new.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/header/src/lib/Header_new.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Slut Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/header/src/lib/Header_new.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoWidth: '200px',\r\n    heading: \"\",\r\n    subheading: \"\"\r\n  },\r\n}"
-                }
-            ],
             "projects/spear-lt-tester/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -1045,12 +1057,14 @@
                         {
                             "name": "column",
                             "deprecated": false,
-                            "deprecationMessage": ""
+                            "deprecationMessage": "",
+                            "value": "column"
                         },
                         {
                             "name": "row",
                             "deprecated": false,
-                            "deprecationMessage": ""
+                            "deprecationMessage": "",
+                            "value": "row"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -1063,13 +1077,13 @@
             ]
         },
         "groupedTypeAliases": {
-            "projects/header/src/lib/Header_new.stories.ts": [
+            "projects/header/src/lib/header.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/header/src/lib/Header_new.stories.ts",
+                    "file": "projects/header/src/lib/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1119,7 +1133,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 7,
         "status": "low",
         "files": [
             {
@@ -1141,7 +1155,35 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/lib/Header_new.stories.ts",
+                "filePath": "projects/header/src/lib/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 85,
+                "coverageCount": "6/7",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HeaderService",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Column",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1151,31 +1193,13 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/header/src/lib/Header_new.stories.ts",
+                "filePath": "projects/header/src/lib/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Row",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/header/src/lib/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 42,
-                "coverageCount": "3/7",
-                "status": "medium"
-            },
-            {
-                "filePath": "projects/header/src/lib/header.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "HeaderService",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -1194,7 +1218,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
