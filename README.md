@@ -2,7 +2,21 @@
 
 You know what Spear LT | Honey Badger is; it's Fight Club.
 
-## Create New Package
+## Storybook
+
+### initialize project
+```
+$ npx storybook@latest init
+```
+
+### Running Storybook
+```
+$ ng run <project>:storybook
+```
+
+## NPM
+
+### Create New Package
 ```
 $ cd .\spear-lt\projects\<project>
 $ npm init --scope=@farley911
@@ -12,7 +26,7 @@ $ cd \dist\<package>
 $ npm publish --access public
 ```
 
-## Update Package
+### Update Package
 ```
 $ cd .\spear-lt\projects\<project>
 $ npm version <patch|minor|major>
@@ -22,7 +36,7 @@ $ cd \dist\<package>
 $ npm publish --access public
 ```
 
-## Update \<client>\package.json with the latest version
+### Update \<client>\package.json with the latest version
 ```
 $ cd <client>
 $ npm i
