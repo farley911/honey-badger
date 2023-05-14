@@ -1,6 +1,6 @@
 # Spear LT _-or-_ Honey Badger
 
-I know what Spear LT is; it's like Fight Club.
+You know what Spear LT | Honey Badger is; it's Fight Club.
 
 ## Create New Package
 ```
