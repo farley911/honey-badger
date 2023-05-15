@@ -69,34 +69,34 @@
         }
       }
     },
-    "spear-lt-tester": {
+    "tester-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/spear-lt-tester",
-      "sourceRoot": "projects/spear-lt-tester/src",
+      "root": "projects/tester-app",
+      "sourceRoot": "projects/tester-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/spear-lt-tester",
-            "index": "projects/spear-lt-tester/src/index.html",
-            "main": "projects/spear-lt-tester/src/main.ts",
+            "outputPath": "dist/tester-app",
+            "index": "projects/tester-app/src/index.html",
+            "main": "projects/tester-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/spear-lt-tester/tsconfig.app.json",
+            "tsConfig": "projects/tester-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/spear-lt-tester/src/favicon.ico",
-              "projects/spear-lt-tester/src/assets"
+              "projects/tester-app/src/favicon.ico",
+              "projects/tester-app/src/assets"
             ],
             "styles": [
-              "projects/spear-lt-tester/src/styles.scss"
+              "projects/tester-app/src/styles.scss"
             ],
             "scripts": []
           },
@@ -131,10 +131,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "spear-lt-tester:build:production"
+              "browserTarget": "tester-app:build:production"
             },
             "development": {
-              "browserTarget": "spear-lt-tester:build:development"
+              "browserTarget": "tester-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -142,7 +142,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spear-lt-tester:build"
+            "browserTarget": "tester-app:build"
           }
         },
         "test": {
@@ -152,14 +152,14 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/spear-lt-tester/tsconfig.spec.json",
+            "tsConfig": "projects/tester-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/spear-lt-tester/src/favicon.ico",
-              "projects/spear-lt-tester/src/assets"
+              "projects/tester-app/src/favicon.ico",
+              "projects/tester-app/src/assets"
             ],
             "styles": [
-              "projects/spear-lt-tester/src/styles.scss"
+              "projects/tester-app/src/styles.scss"
             ],
             "scripts": []
           }
@@ -167,14 +167,14 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "configDir": "projects/spear-lt-tester/.storybook",
-            "browserTarget": "spear-lt-tester:build",
+            "configDir": "projects/tester-app/.storybook",
+            "browserTarget": "tester-app:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
               "json",
               "-d",
-              "projects/spear-lt-tester"
+              "projects/tester-app"
             ],
             "port": 6006
           }
@@ -182,16 +182,16 @@
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "configDir": "projects/spear-lt-tester/.storybook",
-            "browserTarget": "spear-lt-tester:build",
+            "configDir": "projects/tester-app/.storybook",
+            "browserTarget": "tester-app:build",
             "compodoc": true,
             "compodocArgs": [
               "-e",
               "json",
               "-d",
-              "projects/spear-lt-tester"
+              "projects/tester-app"
             ],
-            "outputDir": "dist/storybook/spear-lt-tester"
+            "outputDir": "dist/storybook/tester-app"
           }
         }
       }
