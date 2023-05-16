@@ -5,10 +5,10 @@ You know what Spear LT | Honey Badger is; it's Fight Club.
 ## Material
 
 ### Adding Material Components to a Module
-1. Add the material component to the <project>.module.ts imports block.
-1. Add the the following code block to the <project>.stories.ts meta property.
+1. Add the material component to the `project`.module.ts imports block.
+1. Add the the following code block to the `project`.stories.ts meta property.
 1. The material component must be imported into any app that implements the project.
-_<project>.stories.ts_
+_`project`.stories.ts_
 ```
 const meta = {
   ...,
@@ -50,7 +50,7 @@ $ cd \dist\<package>
 $ npm publish --access public
 ```
 
-### Update \<client>\package.json with the latest version
+### Update `client`\package.json with the latest version
 ```
 $ cd <client>
 $ npm i
