@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/angular";
+import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 import { Layout } from "../consts/layout.enum";
 import { HeaderComponent } from "./header.component";
+import { MatButtonModule } from "@angular/material/button";
 
 
 const meta: Meta<HeaderComponent> = {
@@ -9,7 +10,13 @@ const meta: Meta<HeaderComponent> = {
   tags: ['autodocs'],
   argTypes: {
     layout: { control: 'select', options: [ ...Object.keys(Layout) ]},
-  }
+  },
+  decorators: [
+    moduleMetadata({
+      declarations: [],
+      imports: [MatButtonModule]
+    })
+  ]
 }
 
 export default meta;

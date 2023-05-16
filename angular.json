@@ -96,6 +96,7 @@
               "projects/tester-app/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/tester-app/src/styles.scss"
             ],
             "scripts": []
@@ -159,6 +160,7 @@
               "projects/tester-app/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/tester-app/src/styles.scss"
             ],
             "scripts": []

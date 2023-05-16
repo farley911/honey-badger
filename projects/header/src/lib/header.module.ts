@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
   ]
 })
 export class HeaderModule { }

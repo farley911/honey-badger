@@ -622,13 +622,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-0670a20d90fc20b1dc16edc081f9b263625f3255f29b19de7ca5a0535867d52f1ce293ebf8c96ebf0e27263395ae305b14a82f05492b10eb24e83c0007f5784b",
+            "id": "module-HeaderModule-3001958bb74df0c313e3f17e839930303fcd193f48ba0aa57595005c4be873f523205d2922fd6aef72602659c8d304137ed080a291e4d6aeb2cb2c593fd8a910",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/header/src/lib/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HeaderComponent } from './header.component';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    MatButtonModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HeaderComponent } from './header.component';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    MatButtonModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent,\r\n    MatButtonModule,\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
