@@ -101,7 +101,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": ""
+            "templateData": "<slt-header logoUrl=\"assets/logo.jpg\" logoWidth=\"200px\" heading=\"Bill's Steakhouse\" subheading=\"Great Smoked Steaks\"></slt-header>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -368,7 +368,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<section class=\"header\">\r\n  <section class=\"branding\" [ngClass]=\"{ column: layout === Layout.column }\">\r\n    <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" />\r\n    <div class=\"heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n    <button>Hello World</button>\r\n  </section>\r\n</section>"
+            "templateData": "<section class=\"header\">\r\n  <section class=\"branding\" [ngClass]=\"{ column: layout === Layout.column }\">\r\n    <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" />\r\n    <div class=\"heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n    <button mat-raised-button>Hello World</button>\r\n  </section>\r\n</section>"
         },
         {
             "name": "HeaderComponent",
@@ -530,13 +530,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-2c2e2411ded3ab9c105768ee2dd768bc5eb53d82882c5fea21c674a465a84e23781fca9557f52d4822d52b95fa090700ae7ea1c710603b84b5def6fb992a1a9d",
+            "id": "module-AppModule-983052630a0b100c6bc22b5722ebf8eeebb346c6b8bb4e906c741c809006302256b8dbce113000c9d2360427d51d7abd633a20dccc9f9890f92f5f8902656723",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/tester-app/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { HeaderModule } from 'projects/header/src/lib/header.module';\r\n\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    HeaderModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -552,7 +552,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "HeaderModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -618,13 +622,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-a579bb8f2ff56044f114cc1126fb181f559812b0e625daf8be18822ce3f917a6561dc6ce1dce708362af633687b3d8b8bb2d68333dfced30ec40bf61052dd7ff",
+            "id": "module-HeaderModule-0670a20d90fc20b1dc16edc081f9b263625f3255f29b19de7ca5a0535867d52f1ce293ebf8c96ebf0e27263395ae305b14a82f05492b10eb24e83c0007f5784b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/header/src/lib/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HeaderComponent } from './header.component';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HeaderComponent } from './header.component';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    MatButtonModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
