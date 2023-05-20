@@ -1,5 +1,6 @@
 export interface NavItem {
+  children?: NavItem[],
   isActive?: boolean;
-  route: string;
+  route?: string;
   text: string;
 }
