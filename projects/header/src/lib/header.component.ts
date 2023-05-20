@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Layout } from '../consts/layout.enum';
 
 @Component({
-  selector: 'slt-header',
+  selector: 'hb-header',
   templateUrl: 'header.component.html',
   styleUrls: [ 'header.component.scss' ]
 })

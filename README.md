@@ -1,6 +1,6 @@
-# Spear LT _-or-_ Honey Badger
+# Honey Badger
 
-You know what Spear LT | Honey Badger is; it's Fight Club.
+You know what Honey Badger is; it's Fight Club.
 
 ## Material
 
@@ -25,14 +25,14 @@ const meta = {
 
 ### Running Storybook
 ```
-$ ng run spear-lt-tester:storybook
+$ ng run tester-app:storybook
 ```
 
 ## NPM
 
 ### Create New Package
 ```
-$ cd .\spear-lt\projects\<project>
+$ cd .\honey-badger\projects\<project>
 $ npm init --scope=@farley911
 $ cd ..\..
 $ ng build <package>
@@ -42,7 +42,7 @@ $ npm publish --access public
 
 ### Update Package
 ```
-$ cd .\spear-lt\projects\<project>
+$ cd .\honey-badger\projects\<project>
 $ npm version <patch|minor|major>
 $ cd ..\..
 $ ng build <package>
@@ -51,6 +51,7 @@ $ npm publish --access public
 ```
 
 ### Update `client`\package.json with the latest version
+Update package.json with the correct verions and run:
 ```
 $ cd <client>
 $ npm i
