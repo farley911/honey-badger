@@ -31,13 +31,13 @@ $ ng run tester-app:storybook
 $ cd .\honey-badger\
 $ ng g library <package-name> --prefix hb
 ```
-Add the .html and .scss* files.
-Update the component decorator.
-Remove the service if it's not needed.
-Remove the service import from public-api.ts
-Add the `project`\src\lib\`project`.stories.ts file.
-
-* If needed.
+* Add the .html and .scss files if needed.
+* In `package`.component.ts change `template` to `templateUrl` and `styles` to `styleUrls`, populate the values.
+* Update the component decorator.
+* Remove the service if it's not needed.
+* Remove the service import from public-api.ts
+* Add the `project`\src\lib\\`project`.stories.ts file.
+* Add `project`.stories.ts file.
 
 ## NPM
 ### Create New Package

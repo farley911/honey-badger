@@ -2,6 +2,47 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "NavItem",
+            "id": "interface-NavItem-440d0d4f813e13f8ac4f1afcf04b12af0c4e7df4fa172b8cc4f546caf94ddac0e55550bf596147ec349936829397860c898ab4075ab8fb6ffc9658595e64d307",
+            "file": "projects/nav/src/models/nav-item.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface NavItem {\r\n  isActive?: boolean;\r\n  route: string;\r\n  text: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "isActive",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "User",
             "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
             "file": "projects/tester-app/src/stories/User.ts",
@@ -248,120 +289,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-30f428f99aa488b3a8f28dff8f00f2f10d62272d673fb1f0ecdab8d5eb35894fd89f1593f096a5ff0a69f414c5bf97fe07e6060ce996454a503ff220e93563c9",
-            "file": "projects/header/src/lib/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "hb-header",
-            "styleUrls": [
-                "header.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "header.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "heading",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHeading, most likely used for the clients name.\n",
-                    "description": "<p>Heading, most likely used for the clients name.</p>\n",
-                    "line": 34,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "layout",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nThe layout for the component.\n",
-                    "description": "<p>The layout for the component.</p>\n",
-                    "line": 14,
-                    "type": "Layout",
-                    "decorators": []
-                },
-                {
-                    "name": "logoAlt",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nName displayed for the alt text\n",
-                    "description": "<p>Name displayed for the alt text</p>\n",
-                    "line": 19,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "logoUrl",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nURL used for the logo.\n",
-                    "description": "<p>URL used for the logo.</p>\n",
-                    "line": 24,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "logoWidth",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained).\n",
-                    "description": "<p>Width used for the logo (aspect ratio will be maintained).</p>\n",
-                    "line": 29,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "subheading",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional subheading for clients with one.\n",
-                    "description": "<p>Optional subheading for clients with one.</p>\n",
-                    "line": 39,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "Layout",
-                    "defaultValue": "Layout",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "<p>Used by the view to map the enum to the input value</p>\n",
-                    "line": 44,
-                    "rawdescription": "\n\nUsed by the view to map the enum to the input value\n"
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout;\r\n\r\n  /**\r\n   * Name displayed for the alt text\r\n   */\r\n  @Input() logoAlt: string;\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl: string;\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth: string;\r\n\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading: string;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading: string;\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".branding {\r\n  display: flex;\r\n  flex-direction: row;\r\n\r\n  &.column {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .heading {\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n\r\n    &.row {\r\n      flex-direction: row;\r\n    }\r\n\r\n    h1 {\r\n      font-size: 1.5rem;\r\n      margin-bottom: 0;\r\n    }\r\n\r\n    h2 {\r\n      font-size: 1.25rem;\r\n      margin-top: 0;\r\n    }\r\n  }\r\n\r\n  .logo {\r\n    padding: 15px 20px;\r\n  }\r\n}",
-                    "styleUrl": "header.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<section class=\"header\">\r\n  <section class=\"branding\" [ngClass]=\"{ column: layout === Layout.column }\">\r\n    <hb-logo [logoUrl]=\"logoUrl\" [logoWidth]=\"logoWidth\" [logoAlt]=\"logoAlt\"></hb-logo>\r\n    <div class=\"heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n  </section>\r\n</section>"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-2be65d757903e1068f51ac561d212aac4eff48aa0ca9141c5d1f0e51915091c22b983193c432fa9d236673f3cb7bbabb05b7f4c417044a2de0260d85dc1263a8-1",
+            "id": "component-HeaderComponent-2be65d757903e1068f51ac561d212aac4eff48aa0ca9141c5d1f0e51915091c22b983193c432fa9d236673f3cb7bbabb05b7f4c417044a2de0260d85dc1263a8",
             "file": "projects/tester-app/src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -430,14 +358,137 @@
                     "styleUrl": "./header.css"
                 }
             ],
+            "stylesData": ""
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-2f4040ee2b178a2dbcc64c69e3213b83d0f1f23238d622b983edbb769aa078c39714f249231337b7e29ad6095bd3b39358a816a529f57f0ef9751f5296712904-1",
+            "file": "projects/header/src/lib/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hb-header",
+            "styleUrls": [
+                "header.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "header.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "heading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHeading, most likely used for the clients name.\n",
+                    "description": "<p>Heading, most likely used for the clients name.</p>\n",
+                    "line": 40,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "href",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHref to use when the logo is clicked.\nDefaults to \"/\".\n",
+                    "description": "<p>Href to use when the logo is clicked.\nDefaults to &quot;/&quot;.</p>\n",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "layout",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nThe layout for the component.\n",
+                    "description": "<p>The layout for the component.</p>\n",
+                    "line": 20,
+                    "type": "Layout",
+                    "decorators": []
+                },
+                {
+                    "name": "logoAlt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nName displayed for the alt text.\n",
+                    "description": "<p>Name displayed for the alt text.</p>\n",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "logoUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nURL used for the logo.\n",
+                    "description": "<p>URL used for the logo.</p>\n",
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "logoWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained).\n",
+                    "description": "<p>Width used for the logo (aspect ratio will be maintained).</p>\n",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "subheading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional subheading for clients with one.\n",
+                    "description": "<p>Optional subheading for clients with one.</p>\n",
+                    "line": 45,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "Layout",
+                    "defaultValue": "Layout",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "<p>Used by the view to map the enum to the input value.</p>\n",
+                    "line": 50,
+                    "rawdescription": "\n\nUsed by the view to map the enum to the input value.\n"
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * Href to use when the logo is clicked.\r\n   * Defaults to \"/\".\r\n   */\r\n  @Input() href: string;\r\n\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout;\r\n\r\n  /**\r\n   * Name displayed for the alt text.\r\n   */\r\n  @Input() logoAlt: string;\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl: string;\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth: string;\r\n\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading: string;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading: string;\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".branding {\r\n  display: flex;\r\n  flex-direction: row;\r\n\r\n  &.column {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .heading {\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n\r\n    &.row {\r\n      flex-direction: row;\r\n    }\r\n\r\n    h1 {\r\n      font-size: 1.5rem;\r\n      margin-bottom: 0;\r\n    }\r\n\r\n    h2 {\r\n      font-size: 1.25rem;\r\n      margin-top: 0;\r\n    }\r\n  }\r\n\r\n  .logo {\r\n    padding: 15px 20px;\r\n  }\r\n}",
+                    "styleUrl": "header.component.scss"
+                }
+            ],
             "stylesData": "",
             "isDuplicate": true,
             "duplicateId": 1,
-            "duplicateName": "HeaderComponent-1"
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<section class=\"header\">\r\n  <section class=\"branding\" [ngClass]=\"{ column: layout === Layout.column }\">\r\n    <hb-logo [logoUrl]=\"logoUrl\" [logoWidth]=\"logoWidth\" [logoAlt]=\"logoAlt\"></hb-logo>\r\n    <div class=\"heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n  </section>\r\n</section>"
         },
         {
             "name": "LogoComponent",
-            "id": "component-LogoComponent-0fea194b28635ae8b8d3ad2cc472d0d2a079c5ae5c7c0fd1e09c73f2012c5a6eff61bbf2490ce601aaa221ab1fa3f653e06a1bc60de1683dd484bb3a8179e198",
+            "id": "component-LogoComponent-a20a648bf652a231c15ee363ec4a6bb6d9ef132dfafef1554ea4a9fd286a270e8100595028b86a62aa498c9f57579dd3cff60468350a7dacb1070e805ae16a0c",
             "file": "projects/logo/src/lib/logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -457,8 +508,8 @@
                     "defaultValue": "'/'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nHref to use when the logo is clicked.\nDefaults to \"/\"\n",
-                    "description": "<p>Href to use when the logo is clicked.\nDefaults to &quot;/&quot;</p>\n",
+                    "rawdescription": "\n\nHref to use when the logo is clicked.\nDefaults to \"/\".\n",
+                    "description": "<p>Href to use when the logo is clicked.\nDefaults to &quot;/&quot;.</p>\n",
                     "line": 13,
                     "type": "string",
                     "decorators": []
@@ -467,8 +518,8 @@
                     "name": "logoAlt",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nName displayed for the alt and tooltip text\n",
-                    "description": "<p>Name displayed for the alt and tooltip text</p>\n",
+                    "rawdescription": "\n\nName displayed for the alt and tooltip text.\n",
+                    "description": "<p>Name displayed for the alt and tooltip text.</p>\n",
                     "line": 18,
                     "type": "string",
                     "decorators": []
@@ -505,11 +556,137 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'hb-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: []\n})\nexport class LogoComponent {\n  /**\n   * Href to use when the logo is clicked.\n   * Defaults to \"/\"\n   */\n  @Input() href: string = '/';\n\n  /**\n   * Name displayed for the alt and tooltip text\n   */\n  @Input() logoAlt: string;\n\n  /**\n   * URL used for the logo.\n   */\n  @Input() logoUrl: string = \"https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png\";\n\n  /**\n  * Width used for the logo (aspect ratio will be maintained).\n  */\n  @Input() logoWidth: string;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'hb-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: []\n})\nexport class LogoComponent {\n  /**\n   * Href to use when the logo is clicked.\n   * Defaults to \"/\".\n   */\n  @Input() href: string = '/';\n\n  /**\n   * Name displayed for the alt and tooltip text.\n   */\n  @Input() logoAlt: string;\n\n  /**\n   * URL used for the logo.\n   */\n  @Input() logoUrl: string = \"https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png\";\n\n  /**\n  * Width used for the logo (aspect ratio will be maintained).\n  */\n  @Input() logoWidth: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "templateData": "<a [href]=\"href\">\r\n  <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" [alt]=\"logoAlt\" />\r\n</a>\r\n"
+        },
+        {
+            "name": "NavComponent",
+            "id": "component-NavComponent-525d24369f3ea238172116f55c933468a1a29d4b1856d3c24a5b4204948887f9bb0a914c0457d31258664aa75b0ca01f49ded9cd46555d6e463b955570dbcc74",
+            "file": "projects/nav/src/lib/nav.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hb-nav",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./nav.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "layout",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nThe nav can be either inline or vertical.\n",
+                    "description": "<p>The nav can be either inline or vertical.</p>\n",
+                    "line": 16,
+                    "type": "Layout",
+                    "decorators": []
+                },
+                {
+                    "name": "navItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCollection of NavItems\n",
+                    "description": "<p>Collection of NavItems</p>\n",
+                    "line": 21,
+                    "type": "NavItem[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "navTo",
+                    "args": [
+                        {
+                            "name": "path",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nNavigates to the provided URL\n\n",
+                    "description": "<p>Navigates to the provided URL</p>\n",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 589,
+                                "end": 593,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "path"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 583,
+                                "end": 588,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>string</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { Layout } from '../consts/layout.enum';\nimport { NavItem } from '../models/nav-item.interface';\nimport { Router } from '@angular/router';\n\n@Component({\n  selector: 'hb-nav',\n  templateUrl: './nav.component.html',\n  styleUrls: []\n})\nexport class NavComponent {\n  /**\n   * The nav can be either inline or vertical.\n   */\n  @Input() layout: Layout\n\n  /**\n   * Collection of NavItems\n   */\n  @Input() navItems: NavItem[];\n\n  constructor(\n    private router: Router,\n  ) { }\n\n  /**\n   * Navigates to the provided URL\n   * \n   * @param path string\n   */\n  navTo(path: string): void {\n    this.router.navigate([path]);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 21,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<section class=\"nav\">\r\n  <button mat-button *ngFor=\"let navItem of navItems\" (click)=\"navTo(navItem.route)\">{{navItem.text}}</button>\r\n</section>"
         },
         {
             "name": "PageComponent",
@@ -713,11 +890,7 @@
                 },
                 {
                     "type": "exports",
-                    "elements": [
-                        {
-                            "name": "HeaderComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "bootstrap",
@@ -772,6 +945,50 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "NavModule",
+            "id": "module-NavModule-0475b5e8d65e0dc3607ea09980f8a5f0c2c1c4f81d021073926384df21ea940038859a2ff8f76e09153a7ef018b8904b31b1cbeca9aba8143cd65eab3a6bf46d",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/nav/src/lib/nav.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavComponent } from './nav.component';\nimport { MatButtonModule } from '@angular/material/button';\n\n@NgModule({\n  declarations: [\n    NavComponent\n  ],\n  imports: [\n    MatButtonModule\n  ],\n  exports: [\n    NavComponent\n  ]\n})\nexport class NavModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -784,7 +1001,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.column,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+            },
+            {
+                "name": "Inline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/nav/src/lib/nav.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
             },
             {
                 "name": "Large",
@@ -840,26 +1067,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, LogoModule]\r\n    })\r\n\r\n\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -887,6 +1094,36 @@
                 "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, LogoModule]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/nav/src/lib/nav.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NavComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -900,21 +1137,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
             },
             {
                 "name": "Row",
@@ -924,7 +1161,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.row,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -949,28 +1186,6 @@
         ],
         "functions": [],
         "typealiases": [
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/header/src/lib/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 177
-            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -1003,6 +1218,39 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HeaderComponent>",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<NavComponent>",
+                "file": "projects/nav/src/lib/nav.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
             }
         ],
         "enumerations": [
@@ -1028,6 +1276,29 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "projects/header/src/consts/layout.enum.ts"
+            },
+            {
+                "name": "Layout",
+                "childs": [
+                    {
+                        "name": "inline",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "inline"
+                    },
+                    {
+                        "name": "vertical",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "vertical"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/nav/src/consts/layout.enum.ts"
             }
         ],
         "groupedVariables": {
@@ -1040,7 +1311,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.column,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1050,7 +1321,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, LogoModule]\r\n    })\r\n\r\n\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, LogoModule]\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "Row",
@@ -1060,7 +1331,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.row,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                }
+            ],
+            "projects/nav/src/lib/nav.stories.ts": [
+                {
+                    "name": "Inline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NavComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
                 }
             ],
             "projects/tester-app/src/stories/Button.stories.ts": [
@@ -1240,35 +1533,34 @@
                     "description": "",
                     "file": "projects/header/src/consts/layout.enum.ts"
                 }
+            ],
+            "projects/nav/src/consts/layout.enum.ts": [
+                {
+                    "name": "Layout",
+                    "childs": [
+                        {
+                            "name": "inline",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "inline"
+                        },
+                        {
+                            "name": "vertical",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "vertical"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/nav/src/consts/layout.enum.ts"
+                }
             ]
         },
         "groupedTypeAliases": {
-            "projects/header/src/lib/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/header/src/lib/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<LogoComponent>",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/tester-app/src/stories/Button.stories.ts": [
                 {
                     "name": "Story",
@@ -1307,12 +1599,51 @@
                     "description": "",
                     "kind": 177
                 }
+            ],
+            "projects/header/src/lib/header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderComponent>",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/nav/src/lib/nav.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NavComponent>",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
             ]
         }
     },
     "routes": [],
     "coverage": {
-        "count": 9,
+        "count": 10,
         "status": "low",
         "files": [
             {
@@ -1338,8 +1669,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
-                "coveragePercent": 87,
-                "coverageCount": "7/8",
+                "coveragePercent": 88,
+                "coverageCount": "8/9",
                 "status": "very-good"
             },
             {
@@ -1399,6 +1730,44 @@
                 "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/nav/src/lib/nav.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavComponent",
+                "coveragePercent": 60,
+                "coverageCount": "3/5",
+                "status": "good"
+            },
+            {
+                "filePath": "projects/nav/src/lib/nav.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Inline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/nav/src/lib/nav.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/nav/src/models/nav-item.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NavItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

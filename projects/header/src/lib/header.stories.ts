@@ -16,8 +16,6 @@ const meta: Meta<HeaderComponent> = {
       declarations: [],
       imports: [MatButtonModule, LogoModule]
     })
-
-
   ]
 }
 
@@ -26,6 +24,7 @@ type Story = StoryObj<HeaderComponent>;
 
 export const Row: Story = {
   args: {
+    href: '/',
     layout: Layout.row,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
@@ -37,6 +36,7 @@ export const Row: Story = {
 
 export const Column: Story = {
   args: {
+    href: '/',
     layout: Layout.column,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',

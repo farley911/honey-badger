@@ -9,6 +9,12 @@ import { Layout } from '../consts/layout.enum';
 })
 export class HeaderComponent {
   /**
+   * Href to use when the logo is clicked.
+   * Defaults to "/".
+   */
+  @Input() href: string;
+
+  /**
    * The layout for the component.
    */
   @Input() layout: Layout;

@@ -25,6 +25,9 @@
       "logo": [
         "dist/logo"
       ],
+      "nav": [
+        "dist/nav"
+      ],
     },
     "sourceMap": true,
     "strict": true,
