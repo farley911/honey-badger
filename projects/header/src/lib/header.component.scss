@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: row;
 
-  &.column {
+  &.vertcal {
     flex-direction: column;
   }
 
   .heading {
-    align-items: center;
+    align-items: start;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,17 +17,18 @@
     }
 
     h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0;
+      font-size: 1.1rem;
+      margin: 0;
     }
 
     h2 {
-      font-size: 1.25rem;
-      margin-top: 0;
+      font-size: .8rem;
+      font-weight: normal;
+      margin: 0;
     }
   }
 
-  .logo {
-    padding: 15px 20px;
+  hb-logo {
+    padding: 10px 20px 10px 0px;
   }
 }

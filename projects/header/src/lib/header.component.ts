@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 import { Layout } from '../consts/layout.enum';
+import { Layout as NavLayout } from 'projects/nav/src/consts/layout.enum';
+import { NavItem } from 'projects/nav/src/models/nav-item.interface';
 
 @Component({
   selector: 'hb-header',
@@ -9,43 +11,58 @@ import { Layout } from '../consts/layout.enum';
 })
 export class HeaderComponent {
   /**
+   * Heading, most likely used for the clients name.
+   */
+  @Input() heading = '';
+
+  /**
    * Href to use when the logo is clicked.
    * Defaults to "/".
    */
-  @Input() href: string;
+  @Input() href = '';
 
   /**
    * The layout for the component.
    */
-  @Input() layout: Layout;
+  @Input() layout: Layout = Layout.inline;
 
   /**
    * Name displayed for the alt text.
    */
-  @Input() logoAlt: string;
+  @Input() logoAlt = '';
 
   /**
    * URL used for the logo.
    */
-  @Input() logoUrl: string;
+  @Input() logoUrl = '';
 
   /**
    * Width used for the logo (aspect ratio will be maintained).
    */
-  @Input() logoWidth: string;
-
+  @Input() logoWidth = '';
+  
   /**
-   * Heading, most likely used for the clients name.
+   * NavItems tems to display to the user.
    */
-  @Input() heading: string;
+  @Input() navItems: NavItem[] = [];
+  
+  /**
+   * Used by the nav to orient itself.
+   */
+  @Input() navLayout: NavLayout = NavLayout.inline;
 
   /**
    * Optional subheading for clients with one.
    */
-  @Input() subheading: string;
+  @Input() subheading = '';
 
   /**
    * Used by the view to map the enum to the input value.
    */
   Layout: typeof Layout = Layout;
+
+  /**
+   * Used by the nav to orient itself.
+   */
+  NavLayout: typeof NavLayout = NavLayout;
 }

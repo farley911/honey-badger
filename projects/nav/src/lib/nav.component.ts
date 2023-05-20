@@ -13,12 +13,12 @@ export class NavComponent {
   /**
    * The nav can be either inline or vertical.
    */
-  @Input() layout: Layout
+  @Input() layout: Layout = Layout.inline;
 
   /**
    * Collection of NavItems
    */
-  @Input() navItems: NavItem[];
+  @Input() navItems: NavItem[] = [];
 
   /**
    * Used by the view to map the enum to the input value.

@@ -1,8 +1,12 @@
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
+import { MatButtonModule } from "@angular/material/button";
+import { MatMenuModule } from "@angular/material/menu";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 import { Layout } from "../consts/layout.enum";
 import { HeaderComponent } from "./header.component";
-import { MatButtonModule } from "@angular/material/button";
-import { LogoModule } from "projects/logo/src/lib/logo.module";
+import { LogoComponent } from "projects/logo/src/lib/logo.component";
+import { NavComponent } from "projects/nav/src/lib/nav.component";
 
 const meta: Meta<HeaderComponent> = {
   title: 'Honey Badger/Organisms/Header',
@@ -13,8 +17,8 @@ const meta: Meta<HeaderComponent> = {
   },
   decorators: [
     moduleMetadata({
-      declarations: [],
-      imports: [MatButtonModule, LogoModule]
+      declarations: [LogoComponent, NavComponent],
+      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],
     })
   ]
 }
@@ -22,25 +26,32 @@ const meta: Meta<HeaderComponent> = {
 export default meta;
 type Story = StoryObj<HeaderComponent>;
 
-export const Row: Story = {
+export const Inline: Story = {
   args: {
+    heading: "Wayne Enterprises",
     href: '/',
-    layout: Layout.row,
+    layout: Layout.inline,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
-    logoWidth: '200px',
-    heading: "Wayne Enterprises",
+    logoWidth: '75px',
+    navItems: [{
+      route: '/menu',
+      text: 'Menu',
+    }, {
+      route: '/contact',
+      text: 'Contact Us',
+    }],
     subheading: "Not affiliated with Batman",
   },
 };
 
-export const Column: Story = {
+export const Vertical: Story = {
   args: {
     href: '/',
-    layout: Layout.column,
+    layout: Layout.vertical,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
-    logoWidth: '200px',
+    logoWidth: '75px',
     heading: "Wayne Enterprises",
     subheading: "Not affiliated with Batman",
   },
@@ -49,10 +60,10 @@ export const Column: Story = {
 export const Toolbar: Story = {
   args: {
     href: '/',
-    layout: Layout.column,
+    layout: Layout.inline,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
-    logoWidth: '200px',
+    logoWidth: '75px',
     heading: "Wayne Enterprises",
     subheading: "Not affiliated with Batman",
   },

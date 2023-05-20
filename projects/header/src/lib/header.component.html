@@ -1,9 +1,10 @@
 <header>
-  <section class="branding" [ngClass]="{ column: layout === Layout.column }">
+  <section class="branding" [ngClass]="{ vertical: layout === Layout.vertical }">
     <hb-logo [logoUrl]="logoUrl" [logoWidth]="logoWidth" [logoAlt]="logoAlt"></hb-logo>
     <div class="heading">
       <h1>{{heading}}</h1>
       <h2>{{subheading}}</h2>
     </div>
   </section>
+  <hb-nav [navItems]="navItems" [layout]="NavLayout.inline"></hb-nav>
 </header>

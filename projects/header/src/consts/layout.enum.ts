@@ -1,4 +1,4 @@
 export enum Layout {
-    column = 'column',
-    row = 'row'
+    inline = 'inline',
+    vertical = 'vertical'
 }
