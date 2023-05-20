@@ -14,6 +14,11 @@ export class HeaderComponent {
   @Input() layout: Layout;
 
   /**
+   * Name displayed for the alt text
+   */
+  @Input() logoAlt: string;
+
+  /**
    * URL used for the logo.
    */
   @Input() logoUrl: string;

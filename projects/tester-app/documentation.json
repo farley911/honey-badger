@@ -269,7 +269,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-764000e5ccb75de3196f9d33bcf8c15c240c747d9c182f90c04214701cc806011c6ea4b088b8cce8a76445b3f2b39d5820e189203dc9bae4ff62bdb2a396d583",
+            "id": "component-HeaderComponent-30f428f99aa488b3a8f28dff8f00f2f10d62272d673fb1f0ecdab8d5eb35894fd89f1593f096a5ff0a69f414c5bf97fe07e6060ce996454a503ff220e93563c9",
             "file": "projects/header/src/lib/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -292,7 +292,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nHeading, most likely used for the clients name.\n",
                     "description": "<p>Heading, most likely used for the clients name.</p>\n",
-                    "line": 29,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -307,12 +307,22 @@
                     "decorators": []
                 },
                 {
+                    "name": "logoAlt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nName displayed for the alt text\n",
+                    "description": "<p>Name displayed for the alt text</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "logoUrl",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nURL used for the logo.\n",
                     "description": "<p>URL used for the logo.</p>\n",
-                    "line": 19,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 },
@@ -322,7 +332,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained).\n",
                     "description": "<p>Width used for the logo (aspect ratio will be maintained).</p>\n",
-                    "line": 24,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -332,7 +342,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional subheading for clients with one.\n",
                     "description": "<p>Optional subheading for clients with one.</p>\n",
-                    "line": 34,
+                    "line": 39,
                     "type": "string",
                     "decorators": []
                 }
@@ -347,7 +357,7 @@
                     "type": "",
                     "optional": false,
                     "description": "<p>Used by the view to map the enum to the input value</p>\n",
-                    "line": 39,
+                    "line": 44,
                     "rawdescription": "\n\nUsed by the view to map the enum to the input value\n"
                 }
             ],
@@ -359,7 +369,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout;\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl: string;\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth: string;\r\n\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading: string;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading: string;\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout;\r\n\r\n  /**\r\n   * Name displayed for the alt text\r\n   */\r\n  @Input() logoAlt: string;\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl: string;\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth: string;\r\n\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading: string;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading: string;\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -368,7 +378,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<section class=\"header\">\r\n  <section class=\"branding\" [ngClass]=\"{ column: layout === Layout.column }\">\r\n    <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" />\r\n    <div class=\"heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n  </section>\r\n</section>"
+            "templateData": "<section class=\"header\">\r\n  <section class=\"branding\" [ngClass]=\"{ column: layout === Layout.column }\">\r\n    <hb-logo [logoUrl]=\"logoUrl\" [logoWidth]=\"logoWidth\" [logoAlt]=\"logoAlt\"></hb-logo>\r\n    <div class=\"heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n  </section>\r\n</section>"
         },
         {
             "name": "HeaderComponent",
@@ -445,6 +455,71 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "HeaderComponent-1"
+        },
+        {
+            "name": "LogoComponent",
+            "id": "component-LogoComponent-2ec6a9862000b4b4bb7b33f6422088ed1eb65d6ae931018add3f8be677024df92c6de32f3a91c90019d81338fc9654822a8cdaa4a17bb81acf8e6af0094a5fc4",
+            "file": "projects/logo/src/lib/logo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hb-logo",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./logo.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "logoAlt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nName displayed for the alt and tooltip text\n",
+                    "description": "<p>Name displayed for the alt and tooltip text</p>\n",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "logoUrl",
+                    "defaultValue": "\"https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nURL used for the logo.\n",
+                    "description": "<p>URL used for the logo.</p>\n",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "logoWidth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained).\n",
+                    "description": "<p>Width used for the logo (aspect ratio will be maintained).</p>\n",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'hb-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: []\n})\nexport class LogoComponent {\n  /**\n   * Name displayed for the alt and tooltip text\n   */\n  @Input() logoAlt: string;\n\n  /**\n   * URL used for the logo.\n   */\n  @Input() logoUrl: string = \"https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png\";  \n\n  /**\n  * Width used for the logo (aspect ratio will be maintained).\n  */\n  @Input() logoWidth: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "templateData": "<a href=\"/\">\r\n  <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" [alt]=\"logoAlt\" />\r\n</a>\r\n"
         },
         {
             "name": "PageComponent",
@@ -618,13 +693,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-ad542a0441095c3eeab974e3ab01c625cb83bc045632efadde8d453857177c1edb8fa5e8e384822a3b6bfbc89f8ed782c7bad7d2bbdcc67c0d1366b01b737c63",
+            "id": "module-HeaderModule-1e76b207654491013e9795ed08b43d5cdea4a2da3fa2ed6688db6f2a11782ffae863320f6d0e2ab429505f562ce5ac88916d0257794930559f83f03aff4a3f49",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/header/src/lib/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HeaderComponent } from './header.component';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    MatButtonModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent,\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { HeaderComponent } from './header.component';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { LogoModule } from 'projects/logo/src/lib/logo.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    LogoModule,\r\n    MatButtonModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent,\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -640,13 +715,61 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "LogoModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
                     "elements": [
                         {
                             "name": "HeaderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LogoModule",
+            "id": "module-LogoModule-2f43fa90c8f69414318741dc8a2d08853a1cab8215eceeb12411b0d40915eff8d38b9133e5ede2b8c11f26413714dd34c3d774430fb75930644ebaa4ce2b59ab",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/logo/src/lib/logo.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { LogoComponent } from './logo.component';\n\n\n\n@NgModule({\n  declarations: [\n    LogoComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    LogoComponent\n  ]\n})\nexport class LogoModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "LogoComponent"
                         }
                     ]
                 },
@@ -671,7 +794,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Large",
@@ -731,7 +854,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Spear LT | Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule]\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule]\r\n    })\r\n\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -777,6 +910,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -791,7 +934,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -822,6 +965,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<HeaderComponent>",
                 "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -896,7 +1050,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.column,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -906,7 +1060,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Spear LT | Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule]\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule]\r\n    })\r\n\r\n  ]\r\n}"
                 },
                 {
                     "name": "Row",
@@ -916,7 +1070,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.row,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
                 }
             ],
             "projects/tester-app/src/stories/Button.stories.ts": [
@@ -1035,6 +1189,28 @@
                     "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LogoComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
+                }
+            ],
             "projects/tester-app/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -1090,6 +1266,19 @@
                     "kind": 177
                 }
             ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
             "projects/tester-app/src/stories/Button.stories.ts": [
                 {
                     "name": "Story",
@@ -1133,7 +1322,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 7,
+        "count": 9,
         "status": "low",
         "files": [
             {
@@ -1159,8 +1348,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
-                "coveragePercent": 85,
-                "coverageCount": "6/7",
+                "coveragePercent": 87,
+                "coverageCount": "7/8",
                 "status": "very-good"
             },
             {
@@ -1198,6 +1387,35 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Row",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/logo/src/lib/logo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LogoComponent",
+                "coveragePercent": 75,
+                "coverageCount": "3/4",
+                "status": "good"
+            },
+            {
+                "filePath": "projects/logo/src/lib/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/logo/src/lib/logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

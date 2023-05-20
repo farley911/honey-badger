@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header.component';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { LogoModule } from 'projects/logo/src/lib/logo.module';
 
 @NgModule({
   declarations: [
@@ -9,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   imports: [
     CommonModule,
+    LogoModule,
     MatButtonModule,
   ],
   exports: [

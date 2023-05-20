@@ -1,5 +1,5 @@
 {
-  "name": "logo",
+  "name": "@farley911/logo",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
@@ -8,5 +8,20 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ng test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farley911/honey-badger.git"
+  },
+  "author": "farley911",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farley911/honey-badger/issues"
+  },
+  "homepage": "https://github.com/farley911/honey-badger#readme"
 }

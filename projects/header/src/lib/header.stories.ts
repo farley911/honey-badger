@@ -2,10 +2,10 @@ import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 import { Layout } from "../consts/layout.enum";
 import { HeaderComponent } from "./header.component";
 import { MatButtonModule } from "@angular/material/button";
-
+import { LogoModule } from "projects/logo/src/lib/logo.module";
 
 const meta: Meta<HeaderComponent> = {
-  title: 'Spear LT | Honey Badger/Organisms/Header',
+  title: 'Honey Badger/Organisms/Header',
   component: HeaderComponent,
   tags: ['autodocs'],
   argTypes: {
@@ -14,8 +14,10 @@ const meta: Meta<HeaderComponent> = {
   decorators: [
     moduleMetadata({
       declarations: [],
-      imports: [MatButtonModule]
+      imports: [MatButtonModule, LogoModule]
     })
+
+
   ]
 }
 
@@ -25,6 +27,7 @@ type Story = StoryObj<HeaderComponent>;
 export const Row: Story = {
   args: {
     layout: Layout.row,
+    logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
     logoWidth: '200px',
     heading: "Wayne Enterprises",
@@ -35,6 +38,7 @@ export const Row: Story = {
 export const Column: Story = {
   args: {
     layout: Layout.column,
+    logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
     logoWidth: '200px',
     heading: "Wayne Enterprises",
