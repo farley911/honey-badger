@@ -20,6 +20,11 @@ export class NavComponent {
    */
   @Input() navItems: NavItem[];
 
+  /**
+   * Used by the view to map the enum to the input value.
+   */
+  Layout: typeof Layout = Layout;
+
   constructor(
     private router: Router,
   ) { }

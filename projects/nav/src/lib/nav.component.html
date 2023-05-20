@@ -1,4 +1,4 @@
-<section class="nav">
+<section class="nav" [ngClass]="{ vertical: layout === Layout.vertical }">
   <ng-container *ngFor="let navItem of navItems" [ngSwitch]="!!navItem.children">    
     <ng-container *ngSwitchCase="true">
       <button mat-button [matMenuTriggerFor]="menu">{{navItem.text}}</button>

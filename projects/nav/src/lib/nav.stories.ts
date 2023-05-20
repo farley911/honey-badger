@@ -54,13 +54,29 @@ export const Nested: Story = {
       }],
       text: 'Nested Item',
     }, {
+      route: '/contact',
+      text: 'Contact',
+    }]
+  },
+};
+
+export const Vertical: Story = {
+  args: {
+    layout: Layout.vertical,
+    navItems: [{
+      route: '/',
+      text: 'Home',
+    }, {
       children: [{
-        route: '/email',
-        text: 'Email',
+        route: '/child1',
+        text: 'Child 1',
       }, {
-        route: '/phone',
-        text: 'Phone',
+        route: '/child2',
+        text: 'Child 2',
       }],
+      text: 'Nested Item',
+    }, {
+      route: '/contact',
       text: 'Contact',
     }]
   },

@@ -1,5 +1,8 @@
+.nav.vertical {
+  display: inline-flex;
+  flex-direction: column;
+}
 
-  ::ng-deep .mat-mdc-menu-content {
-    padding: 0px !important;
-  }
-
+::ng-deep .mat-mdc-menu-content {
+  padding: 0px !important;
+}
