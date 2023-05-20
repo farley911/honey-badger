@@ -35,27 +35,6 @@
                 "line": 6
             },
             "type": "injectable"
-        },
-        {
-            "name": "HeaderService",
-            "id": "injectable-HeaderService-6866e7bf72480f5ba52cdd9cc2999562bada60356ced67041a5e0a54f9ee9ba9ba858d233058f23d867303d17d3718e5995e04613cf7076b5a8deb49936d58c4",
-            "file": "projects/header/src/lib/header.service.ts",
-            "properties": [],
-            "methods": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class HeaderService {\n\n  constructor() { }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 6
-            },
-            "type": "injectable"
         }
     ],
     "guards": [],
@@ -854,7 +833,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule]\r\n    })\r\n\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, LogoModule]\r\n    })\r\n\r\n\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -904,7 +883,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -1060,7 +1039,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule]\r\n    })\r\n\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, LogoModule]\r\n    })\r\n\r\n\r\n  ]\r\n}"
                 },
                 {
                     "name": "Row",
@@ -1220,7 +1199,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -1351,15 +1330,6 @@
                 "coveragePercent": 87,
                 "coverageCount": "7/8",
                 "status": "very-good"
-            },
-            {
-                "filePath": "projects/header/src/lib/header.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "HeaderService",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
             },
             {
                 "filePath": "projects/header/src/lib/header.stories.ts",
