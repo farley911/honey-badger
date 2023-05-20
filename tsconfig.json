@@ -22,6 +22,9 @@
       "header": [
         "dist/header"
       ],
+      "logo": [
+        "dist/logo"
+      ],
     },
     "sourceMap": true,
     "strict": true,
