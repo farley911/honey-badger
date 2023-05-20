@@ -8,12 +8,12 @@ import { Component, Input } from '@angular/core';
 export class LogoComponent {
   /**
    * Href to use when the logo is clicked.
-   * Defaults to "/"
+   * Defaults to "/".
    */
   @Input() href: string = '/';
 
   /**
-   * Name displayed for the alt and tooltip text
+   * Name displayed for the alt and tooltip text.
    */
   @Input() logoAlt: string;
 

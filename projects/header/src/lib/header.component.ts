@@ -14,7 +14,7 @@ export class HeaderComponent {
   @Input() layout: Layout;
 
   /**
-   * Name displayed for the alt text
+   * Name displayed for the alt text.
    */
   @Input() logoAlt: string;
 
@@ -39,7 +39,7 @@ export class HeaderComponent {
   @Input() subheading: string;
 
   /**
-   * Used by the view to map the enum to the input value
+   * Used by the view to map the enum to the input value.
    */
   Layout: typeof Layout = Layout;
 }
