@@ -45,3 +45,15 @@ export const Column: Story = {
     subheading: "Not affiliated with Batman",
   },
 };
+
+export const Toolbar: Story = {
+  args: {
+    href: '/',
+    layout: Layout.column,
+    logoAlt: 'Wayne Enterprises',
+    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
+    logoWidth: '200px',
+    heading: "Wayne Enterprises",
+    subheading: "Not affiliated with Batman",
+  },
+};

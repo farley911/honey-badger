@@ -3,11 +3,11 @@
     <ng-container *ngSwitchCase="true">
       <button mat-button [matMenuTriggerFor]="menu">{{navItem.text}}</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let navChild of navItem.children" (click)="navTo(navChild.route)">{{navChild.text}}</button>
+        <button mat-menu-item *ngFor="let navChild of navItem.children" (click)="navTo(navChild.route!)">{{navChild.text}}</button>
       </mat-menu>
     </ng-container>
     <ng-container *ngSwitchCase="false">
-      <button mat-button (click)="navTo(navItem.route)">{{navItem.text}}</button>
+      <button mat-button (click)="navTo(navItem.route!)">{{navItem.text}}</button>
     </ng-container>
   </ng-container>
 </section>

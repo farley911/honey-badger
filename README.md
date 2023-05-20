@@ -38,6 +38,7 @@ $ ng g library <package-name> --prefix hb
 * Remove the service import from public-api.ts
 * Add the `project`\src\lib\\`project`.stories.ts file.
 * Add `project`.stories.ts file.
+* Follow the NPM - Create New Package instructions.
 
 ## NPM
 ### Create New Package

@@ -32,9 +32,9 @@ export class NavComponent {
   /**
    * Navigates to the provided URL
    * 
-   * @param path string
+   * @param route string
    */
-  navTo(path: string): void {
-    this.router.navigate([path]);
+  navTo(route: string): void {
+    this.router.navigate([route]);
   }
 }
