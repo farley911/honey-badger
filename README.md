@@ -1,9 +1,7 @@
 # Honey Badger
-
 You know what Honey Badger is; it's Fight Club.
 
 ## Material
-
 ### Adding Material Components to a Module
 1. Add the material component to the `project`.module.ts imports block.
 1. Add the the following code block to the `project`.stories.ts meta property.
@@ -22,14 +20,12 @@ const meta = {
 ```
 
 ## Storybook
-
 ### Running Storybook
 ```
 $ ng run tester-app:storybook
 ```
 
 ## Angular Library
-
 ### Create A New Library(Package)
 ```
 $ cd .\honey-badger\
@@ -37,7 +33,6 @@ $ ng g library <package-name>
 ```
 
 ## NPM
-
 ### Create New Package
 ```
 $ cd .\honey-badger\projects\<project>
