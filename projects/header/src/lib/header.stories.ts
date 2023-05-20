@@ -26,6 +26,17 @@ const meta: Meta<HeaderComponent> = {
 export default meta;
 type Story = StoryObj<HeaderComponent>;
 
+const navItems = [{
+  route: '/menu',
+  text: 'Menu',
+}, {
+  route: '/about-us',
+  text: 'About Us',
+}, {
+  route: '/contact',
+  text: 'Contact Us',
+}];
+
 export const Inline: Story = {
   args: {
     heading: "Wayne Enterprises",
@@ -34,37 +45,33 @@ export const Inline: Story = {
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
     logoWidth: '75px',
-    navItems: [{
-      route: '/menu',
-      text: 'Menu',
-    }, {
-      route: '/contact',
-      text: 'Contact Us',
-    }],
+    navItems,
     subheading: "Not affiliated with Batman",
   },
 };
 
 export const Vertical: Story = {
   args: {
+    heading: "Wayne Enterprises",
     href: '/',
     layout: Layout.vertical,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
     logoWidth: '75px',
-    heading: "Wayne Enterprises",
+    navItems,
     subheading: "Not affiliated with Batman",
   },
 };
 
 export const Toolbar: Story = {
   args: {
+    heading: "Wayne Enterprises",
     href: '/',
     layout: Layout.inline,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
     logoWidth: '75px',
-    heading: "Wayne Enterprises",
+    navItems,
     subheading: "Not affiliated with Batman",
   },
 };

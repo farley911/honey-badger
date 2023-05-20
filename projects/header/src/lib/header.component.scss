@@ -3,7 +3,10 @@
   flex-direction: row;
 
   &.vertical {
+    display: inline-block;
     flex-direction: column;
+    margin-right: 20px;
+    text-align: center;
   }
 
   .heading {
@@ -26,6 +29,10 @@
       font-weight: normal;
       margin: 0;
     }
+  }
+
+  &.vertical hb-logo {
+    padding: 0px;
   }
 
   hb-logo {
