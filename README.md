@@ -28,6 +28,14 @@ const meta = {
 $ ng run tester-app:storybook
 ```
 
+## Angular Library
+
+### Create A New Library(Package)
+```
+$ cd .\honey-badger\
+$ ng g library <package-name>
+```
+
 ## NPM
 
 ### Create New Package
