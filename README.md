@@ -51,6 +51,7 @@ $ cd \dist\<package>
 $ npm publish --access public
 ```
 * Update ./honey-badger/package.json to include your new project.
+* Add any exported enums to the public-api.ts file.
 
 ### Update Package
 ```
