@@ -16,7 +16,6 @@
     "outDir": "./dist/out-tsc",
     "paths": {
       "footer": [
-        "dist/footer",
         "dist/footer"
       ],
       "header": [

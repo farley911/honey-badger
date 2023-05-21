@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { NavItem } from '@farley911/nav/models/nav-item.interface';
+import { Layout as NavLayout } from '@farley911/nav/consts/layout.enum';
 
 import { Layout } from '../consts/layout.enum';
-import { Layout as NavLayout } from 'projects/nav/src/consts/layout.enum';
-import { NavItem } from 'projects/nav/src/models/nav-item.interface';
 
 @Component({
   selector: 'hb-header',

@@ -4,7 +4,9 @@
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0",
-    "@angular/material": "~16.0.1"
+    "@angular/material": "~16.0.1",
+    "@farley911/logo": "1.0.0",
+    "@farley911/nav": "1.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
