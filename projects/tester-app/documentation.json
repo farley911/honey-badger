@@ -298,7 +298,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-31f549ed8b8f4120072561b452ab986d2094c8a5f61149b2f57be62dacac4247d82ca23411654d13e30060bd519dc04c2c9db9b8c89d0bc7543081bce57044bc",
+            "id": "component-HeaderComponent-97df7678c60be3f06141ca00071226e52e372801ca6016cc86662834487565a62c572c403626ede91dbe1393723252e88689ee66d5deff51ac5eb28aa6630624",
             "file": "projects/header/src/lib/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -448,11 +448,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\nimport { Layout as NavLayout } from 'projects/nav/src/consts/layout.enum';\r\nimport { NavItem } from 'projects/nav/src/models/nav-item.interface';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading = '';\r\n\r\n  /**\r\n   * Href to use when the logo is clicked.\r\n   * Defaults to \"/\".\r\n   */\r\n  @Input() href = '';\r\n\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout = Layout.inline;\r\n\r\n  /**\r\n   * Name displayed for the alt text.\r\n   */\r\n  @Input() logoAlt = '';\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl = '';\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth = '';\r\n  \r\n  /**\r\n   * NavItems tems to display to the user.\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n  \r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  @Input() navLayout: NavLayout = NavLayout.inline;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading = '';\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n\r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  NavLayout: typeof NavLayout = NavLayout;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Layout as NavLayout } from '@farley911/nav';\r\nimport { NavItem } from '@farley911/nav/models/nav-item.interface';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading = '';\r\n\r\n  /**\r\n   * Href to use when the logo is clicked.\r\n   * Defaults to \"/\".\r\n   */\r\n  @Input() href = '';\r\n\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout = Layout.inline;\r\n\r\n  /**\r\n   * Name displayed for the alt text.\r\n   */\r\n  @Input() logoAlt = '';\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl = '';\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth = '';\r\n  \r\n  /**\r\n   * NavItems tems to display to the user.\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n  \r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  @Input() navLayout: NavLayout = NavLayout.inline;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading = '';\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n\r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  NavLayout: typeof NavLayout = NavLayout;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".branding {\r\n  display: flex;\r\n  flex-direction: row;\r\n\r\n  &.vertcal {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .heading {\r\n    align-items: center;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n\r\n    &.row {\r\n      flex-direction: row;\r\n    }\r\n\r\n    h1 {\r\n      font-size: 1.5rem;\r\n      margin-bottom: 0;\r\n    }\r\n\r\n    h2 {\r\n      font-size: 1.25rem;\r\n      margin-top: 0;\r\n    }\r\n  }\r\n\r\n  .logo {\r\n    padding: 15px 20px;\r\n  }\r\n}",
+                    "data": ".branding {\r\n  display: flex;\r\n  flex-direction: row;\r\n\r\n  &.vertical {\r\n    display: inline-block;\r\n    flex-direction: column;\r\n    margin-right: 20px;\r\n    text-align: center;\r\n  }\r\n\r\n  .heading {\r\n    align-items: start;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n\r\n    &.row {\r\n      flex-direction: row;\r\n    }\r\n\r\n    h1 {\r\n      font-size: 1.1rem;\r\n      margin: 0;\r\n    }\r\n\r\n    h2 {\r\n      font-size: .8rem;\r\n      font-weight: normal;\r\n      margin: 0;\r\n    }\r\n  }\r\n\r\n  &.vertical hb-logo {\r\n    padding: 0px;\r\n  }\r\n\r\n  hb-logo {\r\n    padding: 10px 20px 10px 0px;\r\n  }\r\n}",
                     "styleUrl": "header.component.scss"
                 }
             ],
@@ -932,13 +932,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-3a9b960a4f398a9be1bc35e0db9175ea6eebf46bf2cabb4e02c551c654e4f75818e840866d8d5feca7e1abf2e1c63f3332cfa98babf5e8f89681847fdda9a0e4",
+            "id": "module-HeaderModule-d73fa5bd291f041cd6c530d7d4ebbb30cf392f6274cbe3300b75380361a202b7b19fd9effb656580ae765f0f2370d7da280ab7b0ca3aacff711e5506e699ed3f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/header/src/lib/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\n\r\nimport { HeaderComponent } from './header.component';\r\nimport { LogoModule } from 'projects/logo/src/lib/logo.module';\r\nimport { NavModule } from 'projects/nav/src/lib/nav.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    LogoModule,\r\n    NavModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent,\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { LogoModule } from '@farley911/logo';\r\nimport { NavModule } from '@farley911/nav';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { HeaderComponent } from './header.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    LogoModule,\r\n    NavModule,\r\n  ],\r\n  exports: [\r\n    HeaderComponent,\r\n  ]\r\n})\r\nexport class HeaderModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1080,7 +1080,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.inline,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    navItems: [{\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact Us',\r\n    }],\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.inline,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Inline",
@@ -1146,21 +1146,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<LogoComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1201,6 +1201,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<NavComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "navItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[{\r\n  route: '/menu',\r\n  text: 'Menu',\r\n}, {\r\n  route: '/about-us',\r\n  text: 'About Us',\r\n}, {\r\n  route: '/contact',\r\n  text: 'Contact Us',\r\n}]"
             },
             {
                 "name": "Nested",
@@ -1263,16 +1273,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
-                "name": "Toolbar",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/header/src/lib/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.inline,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
-            },
-            {
                 "name": "Vertical",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1280,7 +1280,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Vertical",
@@ -1299,8 +1299,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/header/src/lib/header.stories.ts",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1310,8 +1310,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
+                "rawtype": "StoryObj<HeaderComponent>",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1373,6 +1373,12 @@
                         "value": "inline"
                     },
                     {
+                        "name": "toolbar",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "toolbar"
+                    },
+                    {
                         "name": "vertical",
                         "deprecated": false,
                         "deprecationMessage": "",
@@ -1420,7 +1426,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.inline,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    navItems: [{\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact Us',\r\n    }],\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.inline,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1433,14 +1439,14 @@
                     "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
                 },
                 {
-                    "name": "Toolbar",
+                    "name": "navItems",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/header/src/lib/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.inline,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "type": "[]",
+                    "defaultValue": "[{\r\n  route: '/menu',\r\n  text: 'Menu',\r\n}, {\r\n  route: '/about-us',\r\n  text: 'About Us',\r\n}, {\r\n  route: '/contact',\r\n  text: 'Contact Us',\r\n}]"
                 },
                 {
                     "name": "Vertical",
@@ -1450,7 +1456,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    layout: Layout.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n    heading: \"Wayne Enterprises\",\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
                 }
             ],
             "projects/nav/src/lib/nav.stories.ts": [
@@ -1659,6 +1665,12 @@
                             "value": "inline"
                         },
                         {
+                            "name": "toolbar",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "toolbar"
+                        },
+                        {
                             "name": "vertical",
                             "deprecated": false,
                             "deprecationMessage": "",
@@ -1700,19 +1712,6 @@
             ]
         },
         "groupedTypeAliases": {
-            "projects/header/src/lib/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/header/src/lib/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 177
-                }
-            ],
             "projects/logo/src/lib/logo.stories.ts": [
                 {
                     "name": "Story",
@@ -1720,6 +1719,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<LogoComponent>",
                     "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ],
+            "projects/header/src/lib/header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HeaderComponent>",
+                    "file": "projects/header/src/lib/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1837,7 +1849,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Toolbar",
+                "name": "navItems",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

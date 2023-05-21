@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Layout as NavLayout } from '@farley911/nav';
 import { NavItem } from '@farley911/nav/models/nav-item.interface';
-import { Layout as NavLayout } from '@farley911/nav/consts/layout.enum';
 
 import { Layout } from '../consts/layout.enum';
 
