@@ -50,8 +50,9 @@ $ ng build <package>
 $ cd \dist\<package>
 $ npm publish --access public
 ```
+* Update the ./`project`/README.md
 * Update ./honey-badger/package.json to include your new project.
-* Add any exported enums to the public-api.ts file.
+* Add any exported enums to the `public-api.ts` file.
 
 ### Update Package
 ```
