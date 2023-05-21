@@ -50,6 +50,7 @@ $ ng build <package>
 $ cd \dist\<package>
 $ npm publish --access public
 ```
+* Update ./honey-badger/package.json to include your new project.
 
 ### Update Package
 ```
@@ -60,6 +61,7 @@ $ ng build <package>
 $ cd \dist\<package>
 $ npm publish --access public
 ```
+* Update ./honey-badger/package.json to the current version of the project.
 
 ### Update `client`\package.json with the latest version
 Update package.json with the correct verions and run:
