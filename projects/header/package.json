@@ -12,7 +12,7 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.",
+  "description": "This library can be used to implement a header section into a clients application.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
