@@ -12,7 +12,7 @@ const meta: Meta<NavComponent> = {
   parameters: {
     docs: {
       description: {
-        component: 'Import Module:<br /><span class="code-inline">npm i -D @farley911/nav</span>'
+        component: '<p>Import Module:<br /><span class="code-inline">npm i @farley911/nav</span></p><p>Import Module:<br /><span class="code-inline">import { NavModule } from \'@farley911/nav\';</span>'
       }
     }
   },

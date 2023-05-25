@@ -14,7 +14,7 @@ const meta: Meta<HeaderComponent> = {
   parameters: {
     docs: {
       description: {
-        component: 'Import Module:<br /><span class="code-inline">npm i -D @farley911/header</span>'
+        component: '<p>Import Module:<br /><span class="code-inline">npm i @farley911/header</span></p><p>Import Module:<br /><span class="code-inline">import { HeaderModule } from \'@farley911/header\';</span>'
       }
     }
   },

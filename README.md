@@ -1,6 +1,37 @@
 # Honey Badger
 You know what Honey Badger is; it's Fight Club.
 
+## Building A Client Application
+1. Create a new repo for the client.
+  * [New Repo](https://github.com/new)
+    * Choose private.
+    * Do not initialize the repo with a README file.
+2. Clone the repo
+3. Create the client app in the repo
+  ```
+  ng new <client-name>
+  ```
+  * `y` to routing is requested.
+  * `SCSS` for styles.    
+4. Update the README with the clients information.
+  * TODO: Create a template for a client README.
+5. Install Material in `./<client-name>`
+```
+ng add @angular/material
+```
+  * Choose a theme
+    * TODO: Handle custom themes
+  * `y` to global typography
+  * `y` to animations
+6. Install farley911 modules requested by client.
+  * See [Storybook](http://localhost:6006/) for details.
+7. Provide client details to the modules.
+8. Add `./node_modules` to the .gitignore if vscode has not prompted you to.
+9. Build the client Application
+  * `ng build`
+10. Zip up the `./dist` directory and provide it to the client.
+
+
 ## Material
 ### Adding Material Components to a Module
 1. Add the material component to the `project`.module.ts imports block.
@@ -22,14 +53,16 @@ const meta = {
 ## Storybook
 ### Running Storybook
 ```
-$ ng run tester-app:storybook
+  ng run tester-app:storybook
 ```
 
 ## Angular Library
 ### Create A New Library(Package)
 ```
-$ cd .\honey-badger\
-$ ng g library <package-name> --prefix hb
+cd .\honey-badger\
+```
+```
+ng g library <package-name> --prefix hb
 ```
 * Add the .html and .scss files if needed.
 * In `package`.component.ts change `template` to `templateUrl` and `styles` to `styleUrls`, populate the values.
@@ -43,12 +76,14 @@ $ ng g library <package-name> --prefix hb
 ## NPM
 ### Create New Package
 ```
-$ cd .\honey-badger\projects\<project>
-$ npm init --scope=@farley911
-$ cd ..\..
-$ ng build <package>
-$ cd \dist\<package>
-$ npm publish --access public
+cd .\honey-badger\projects\<project>
+npm init --scope=@farley911
+cd ..\..
+ng build <package>
+cd \dist\<package>
+```
+```
+npm publish --access public
 ```
 * Update the ./`project`/README.md
 * Update ./honey-badger/package.json to include your new project.
@@ -56,19 +91,20 @@ $ npm publish --access public
 
 ### Update Package
 ```
-$ cd .\honey-badger\projects\<project>
-$ npm version <patch|minor|major>
-$ cd ..\..
-$ ng build <package>
-$ cd \dist\<package>
-$ npm publish --access public
+cd .\honey-badger\projects\<project>
+npm version <patch|minor|major>
+cd ..\..
+ng build <package>
+cd \dist\<package>
+```
+```
+npm publish --access public
 ```
 * Update ./honey-badger/package.json to the current version of the project.
-* Add any exported enums to the `public-api.ts` file.
 
-### Update `client`\package.json with the latest version
+### Update `./<client name>`\package.json with the latest version
 Update package.json with the correct verions and run:
 ```
-$ cd <client>
-$ npm i
+cd <client name>
+npm i
 ```

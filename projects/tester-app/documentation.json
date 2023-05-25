@@ -1179,7 +1179,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/header</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1219,17 +1229,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<NavComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/nav</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/logo</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "navItems",
@@ -1265,21 +1265,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -1339,6 +1339,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
@@ -1374,17 +1385,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<NavComponent>",
                 "file": "projects/nav/src/lib/nav.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1465,7 +1465,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/header</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "navItems",
@@ -1507,7 +1507,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<NavComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/nav</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "Nested",
@@ -1655,7 +1655,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<LogoComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: 'Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/logo</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i -D @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -1754,6 +1754,19 @@
                     "kind": 180
                 }
             ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
             "projects/tester-app/src/stories/Button.stories.ts": [
                 {
                     "name": "Story",
@@ -1800,19 +1813,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<NavComponent>",
                     "file": "projects/nav/src/lib/nav.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<LogoComponent>",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
