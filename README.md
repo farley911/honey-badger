@@ -14,7 +14,7 @@ You know what Honey Badger is; it's Fight Club.
   * `y` to routing is requested.
   * `SCSS` for styles.    
 4. Update the README with the clients information.
-  * TODO: Create a template for a client README.
+  * [Example README](https://github.com/farley911/honey-badger/wiki/Client-App-README-Example)
 5. Install Material in `./<client-name>`
 ```
 ng add @angular/material
