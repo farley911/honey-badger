@@ -9,6 +9,13 @@ import { Layout } from "../consts/layout.enum";
 const meta: Meta<NavComponent> = {
   title: 'Honey Badger/Molecules/Nav',
   component: NavComponent,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Import Module:<br /><span class="code-inline">npm i -D @farley911/nav</span>'
+      }
+    }
+  },
   tags: ['autodocs'],
   argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},
   decorators: [

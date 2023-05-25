@@ -5,6 +5,13 @@ import { LogoComponent } from "./logo.component";
 const meta: Meta<LogoComponent> = {
   title: 'Honey Badger/Atoms/Logo',
   component: LogoComponent,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Import Module:<br /><span class="code-inline">npm i -D @farley911/logo</span>'
+      }
+    }
+  },
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
