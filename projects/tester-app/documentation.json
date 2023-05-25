@@ -48,7 +48,7 @@
                 }
             ],
             "indexSignatures": [],
-            "kind": 165,
+            "kind": 168,
             "methods": []
         },
         {
@@ -110,6 +110,7 @@
                 "./app.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
@@ -118,6 +119,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -149,6 +152,7 @@
             "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
             "templateUrl": [],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "backgroundColor",
@@ -169,14 +173,14 @@
                         {
                             "pos": 824,
                             "end": 838,
-                            "flags": 4227072,
+                            "flags": 8421376,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
-                            "kind": 325,
+                            "kind": 330,
                             "tagName": {
                                 "pos": 825,
                                 "end": 833,
-                                "flags": 4227072,
+                                "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 79,
@@ -232,6 +236,13 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -258,7 +269,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-56175d40e9f4a284d6152f92cbb0cc4635351f29c3c50f8476a2178eb9f42141c08b18f415af2fc4fe57e09f33f727ad5a28dd887b15db6066dd438d7e86939a",
+            "id": "component-FooterComponent-dbff720aadfd6444979f67b5b4609e5e8eef3f5f5a1d371d2cc3af3ae6a1203713d5593f1f9d289387087e0a178fbdcaada3d73764fa344f59ebc4c9139d927f",
             "file": "projects/footer/src/lib/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -274,6 +285,7 @@
                 "footer.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
@@ -282,10 +294,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'hb-footer',\n  templateUrl: 'footer.component.html',\n  styleUrls: [ 'footer.component.scss' ]\n})\nexport class FooterComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'hb-footer',\r\n  templateUrl: 'footer.component.html',\r\n  styleUrls: [ 'footer.component.scss' ]\r\n})\r\nexport class FooterComponent {\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -314,6 +328,7 @@
                 "header.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "heading",
@@ -445,6 +460,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -476,6 +493,7 @@
             "template": "<header>    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
             "templateUrl": [],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "user",
@@ -519,6 +537,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -551,6 +571,7 @@
                 "./logo.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "href",
@@ -604,6 +625,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -615,7 +638,7 @@
         },
         {
             "name": "NavComponent",
-            "id": "component-NavComponent-8bdf771e56f5a0c760c81d71425a42eb8d4aa07078cb56cacbde6ad0e23d4f59976bfde876d63515cb33d5eaafed17054ff0e894db94fd47516aabe97a6c4c68",
+            "id": "component-NavComponent-1007505748f04c47c2ec23eb4d86cb8855cac17aad212b6e2728ea179faff1f239afe92f9e587d37807e9c8efcb9b397741054c3b82ec91dece1119d88d29712",
             "file": "projects/nav/src/lib/nav.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -631,6 +654,7 @@
                 "./nav.component.html"
             ],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "layout",
@@ -691,9 +715,9 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 738,
-                                "end": 743,
-                                "flags": 4227072,
+                                "pos": 772,
+                                "end": 777,
+                                "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 79,
@@ -703,9 +727,9 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 732,
-                                "end": 737,
-                                "flags": 4227072,
+                                "pos": 766,
+                                "end": 771,
+                                "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 79,
@@ -720,10 +744,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { Layout } from '../consts/layout.enum';\nimport { NavItem } from '../models/nav-item.interface';\nimport { Router } from '@angular/router';\n\n@Component({\n  selector: 'hb-nav',\n  templateUrl: './nav.component.html',\n  styleUrls: ['./nav.component.scss']\n})\nexport class NavComponent {\n  /**\n   * The nav can be either inline or vertical.\n   */\n  @Input() layout: Layout = Layout.inline;\n\n  /**\n   * Collection of NavItems\n   */\n  @Input() navItems: NavItem[] = [];\n\n  /**\n   * Used by the view to map the enum to the input value.\n   */\n  Layout: typeof Layout = Layout;\n\n  constructor(\n    private router: Router,\n  ) { }\n\n  /**\n   * Navigates to the provided URL\n   * \n   * @param route string\n   */\n  navTo(route: string): void {\n    this.router.navigate([route]);\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\nimport { NavItem } from '../models/nav-item.interface';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'hb-nav',\r\n  templateUrl: './nav.component.html',\r\n  styleUrls: ['./nav.component.scss']\r\n})\r\nexport class NavComponent {\r\n  /**\r\n   * The nav can be either inline or vertical.\r\n   */\r\n  @Input() layout: Layout = Layout.inline;\r\n\r\n  /**\r\n   * Collection of NavItems\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n\r\n  constructor(\r\n    private router: Router,\r\n  ) { }\r\n\r\n  /**\r\n   * Navigates to the provided URL\r\n   * \r\n   * @param route string\r\n   */\r\n  navTo(route: string): void {\r\n    this.router.navigate([route]);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -777,6 +803,7 @@
             "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section class=\"storybook-page\">\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
             "templateUrl": [],
             "viewProviders": [],
+            "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
@@ -827,6 +854,8 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
+            "standalone": false,
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
@@ -1027,13 +1056,13 @@
         },
         {
             "name": "NavModule",
-            "id": "module-NavModule-5b521689096e14865c76a6954c44e17dbda9432cafe9fbbc4f74070ce60b2c4916fe2dc3ff80daf8e8d7c4858b9b9f7ed91958b3e7a7b3da5dccca257a76b08b",
+            "id": "module-NavModule-ef8d068a9fc7a89010f9567c0e1e526bace8a41048eaeb2ef9bfab9f8035ce5205785b1e0e7b2de5326575f7d4e1cc2ff9802ea3659d8e4e05cbaddbe777a932",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/nav/src/lib/nav.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatMenuModule } from '@angular/material/menu';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { NavComponent } from './nav.component';\n\n@NgModule({\n  declarations: [\n    NavComponent\n  ],\n  imports: [\n    BrowserAnimationsModule,\n    MatButtonModule,\n    MatMenuModule\n  ],\n  exports: [\n    NavComponent\n  ]\n})\nexport class NavModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\nimport { NavComponent } from './nav.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    NavComponent\r\n  ],\r\n  imports: [\r\n    BrowserAnimationsModule,\r\n    MatButtonModule,\r\n    MatMenuModule\r\n  ],\r\n  exports: [\r\n    NavComponent\r\n  ]\r\n})\r\nexport class NavModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1230,7 +1259,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n  decorators: [componentWrapperDecorator((story) => `<div class='mat-typography'>${story}</div>`)],\r\n}"
             },
             {
                 "name": "Primary",
@@ -1304,7 +1333,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 177
+                "kind": 180
             },
             {
                 "name": "Story",
@@ -1315,7 +1344,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 177
+                "kind": 180
             },
             {
                 "name": "Story",
@@ -1326,7 +1355,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 177
+                "kind": 180
             },
             {
                 "name": "Story",
@@ -1337,7 +1366,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 177
+                "kind": 180
             },
             {
                 "name": "Story",
@@ -1348,7 +1377,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 177
+                "kind": 180
             },
             {
                 "name": "Story",
@@ -1359,7 +1388,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 177
+                "kind": 180
             }
         ],
         "enumerations": [
@@ -1648,7 +1677,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n  decorators: [componentWrapperDecorator((story) => `<div class='mat-typography'>${story}</div>`)],\r\n}"
                 }
             ]
         },
@@ -1722,7 +1751,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 177
+                    "kind": 180
                 }
             ],
             "projects/header/src/lib/header.stories.ts": [
@@ -1735,7 +1764,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 177
+                    "kind": 180
                 }
             ],
             "projects/tester-app/src/stories/Button.stories.ts": [
@@ -1748,7 +1777,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 177
+                    "kind": 180
                 }
             ],
             "projects/tester-app/src/stories/Header.stories.ts": [
@@ -1761,7 +1790,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 177
+                    "kind": 180
                 }
             ],
             "projects/tester-app/src/stories/Page.stories.ts": [
@@ -1774,7 +1803,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 177
+                    "kind": 180
                 }
             ],
             "projects/nav/src/lib/nav.stories.ts": [
@@ -1787,7 +1816,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 177
+                    "kind": 180
                 }
             ]
         }

@@ -11,6 +11,13 @@ import { NavComponent } from "projects/nav/src/lib/nav.component";
 const meta: Meta<HeaderComponent> = {
   title: 'Honey Badger/Organisms/Header',
   component: HeaderComponent,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Import Module:<br /><span class="code-inline">npm i -D @farley911/header</span>'
+      }
+    }
+  },
   tags: ['autodocs'],
   argTypes: {
     layout: { control: 'select', options: [ ...Object.keys(Layout) ]},

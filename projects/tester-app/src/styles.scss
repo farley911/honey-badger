@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.code-inline {
+  background-color: #e4e4e4;
+  border-radius: 3px;
+  font-size: .8rem !important; // Overwrites storybook defaults
+  font-style: italic;
+  padding: 2px 5px;
+}
