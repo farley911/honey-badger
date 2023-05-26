@@ -3,7 +3,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { Layout } from "../consts/layout.enum";
+import { LAYOUT } from "../consts/layout.enum";
 import { HeaderComponent } from "./header.component";
 import { LogoComponent } from "projects/logo/src/lib/logo.component";
 import { NavComponent } from "projects/nav/src/lib/nav.component";
@@ -14,13 +14,13 @@ const meta: Meta<HeaderComponent> = {
   parameters: {
     docs: {
       description: {
-        component: '<p>Import Module:<br /><span class="code-inline">npm i @farley911/header</span></p><p>Import Module:<br /><span class="code-inline">import { HeaderModule } from \'@farley911/header\';</span>'
+        component: '<p>Install Module:<br /><span class="code-inline">npm i @farley911/header</span></p><p>Import Module:<br /><span class="code-inline">import { HeaderModule } from \'@farley911/header\';</span></p><p>Available const(s):<br /><span class="code-inline">LAYOUT</span></p>'
       }
     }
   },
   tags: ['autodocs'],
   argTypes: {
-    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},
+    layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},
   },
   decorators: [
     moduleMetadata({
@@ -60,10 +60,50 @@ export const Vertical: Story = {
   args: {
     heading: "Wayne Enterprises",
     href: '/',
-    layout: Layout.vertical,
+    layout: LAYOUT.vertical,
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
     logoWidth: '75px',
+    navItems,
+    subheading: "Not affiliated with Batman",
+  },
+};
+
+export const NoHeading: Story = {
+  args: {
+    href: '/',
+    logoAlt: 'Wayne Enterprises',
+    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
+    logoWidth: '75px',
+    navItems,
+  },
+};
+
+export const NoSubheading: Story = {
+  args: {
+    heading: "Wayne Enterprises",
+    href: '/',
+    logoAlt: 'Wayne Enterprises',
+    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
+    logoWidth: '75px',
+    navItems,
+  },
+};
+
+export const NoNavigation: Story = {
+  args: {
+    heading: "Wayne Enterprises",
+    href: '/',
+    logoAlt: 'Wayne Enterprises',
+    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
+    logoWidth: '75px',
+    subheading: "Not affiliated with Batman",
+  },
+};
+
+export const NoLogo: Story = {
+  args: {
+    heading: "Wayne Enterprises",
     navItems,
     subheading: "Not affiliated with Batman",
   },

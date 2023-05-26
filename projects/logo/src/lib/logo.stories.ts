@@ -8,7 +8,7 @@ const meta: Meta<LogoComponent> = {
   parameters: {
     docs: {
       description: {
-        component: '<p>Import Module:<br /><span class="code-inline">npm i @farley911/logo</span></p><p>Import Module:<br /><span class="code-inline">import { LogoModule } from \'@farley911/logo\';</span>'
+        component: '<p>Install Module:<br /><span class="code-inline">npm i @farley911/logo</span></p><p>Import Module:<br /><span class="code-inline">import { LogoModule } from \'@farley911/logo\';</span></p>'
       }
     }
   },

@@ -312,7 +312,83 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-97df7678c60be3f06141ca00071226e52e372801ca6016cc86662834487565a62c572c403626ede91dbe1393723252e88689ee66d5deff51ac5eb28aa6630624",
+            "id": "component-HeaderComponent-2be65d757903e1068f51ac561d212aac4eff48aa0ca9141c5d1f0e51915091c22b983193c432fa9d236673f3cb7bbabb05b7f4c417044a2de0260d85dc1263a8",
+            "file": "projects/tester-app/src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport type { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"storybook-header\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <storybook-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></storybook-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></storybook-button>\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            primary\r\n            size=\"small\"\r\n            primary=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></storybook-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.storybook-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.storybook-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-adafcec23beb2c31592485c4c78ca02fd7ee464df0ab76dfe12847751eeee34b6bfe94755c10631d6f40f4cba8de8007d66100e636d387ba1d86c40808894f0a-1",
             "file": "projects/header/src/lib/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -354,13 +430,13 @@
                 },
                 {
                     "name": "layout",
-                    "defaultValue": "Layout.inline",
+                    "defaultValue": "LAYOUT.inline",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nThe layout for the component.\n",
                     "description": "<p>The layout for the component.</p>\n",
                     "line": 27,
-                    "type": "Layout",
+                    "type": "LAYOUT",
                     "decorators": []
                 },
                 {
@@ -434,7 +510,7 @@
             "propertiesClass": [
                 {
                     "name": "Layout",
-                    "defaultValue": "Layout",
+                    "defaultValue": "LAYOUT",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -465,7 +541,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Layout as NavLayout } from '@farley911/nav';\r\nimport { NavItem } from '@farley911/nav/models/nav-item.interface';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading = '';\r\n\r\n  /**\r\n   * Href to use when the logo is clicked.\r\n   * Defaults to \"/\".\r\n   */\r\n  @Input() href = '';\r\n\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: Layout = Layout.inline;\r\n\r\n  /**\r\n   * Name displayed for the alt text.\r\n   */\r\n  @Input() logoAlt = '';\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl = '';\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth = '';\r\n  \r\n  /**\r\n   * NavItems tems to display to the user.\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n  \r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  @Input() navLayout: NavLayout = NavLayout.inline;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading = '';\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n\r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  NavLayout: typeof NavLayout = NavLayout;\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Layout as NavLayout } from '@farley911/nav';\r\nimport { NavItem } from '@farley911/nav/models/nav-item.interface';\r\n\r\nimport { LAYOUT } from '../consts/layout.enum';\r\n\r\n@Component({\r\n  selector: 'hb-header',\r\n  templateUrl: 'header.component.html',\r\n  styleUrls: [ 'header.component.scss' ]\r\n})\r\nexport class HeaderComponent {\r\n  /**\r\n   * Heading, most likely used for the clients name.\r\n   */\r\n  @Input() heading = '';\r\n\r\n  /**\r\n   * Href to use when the logo is clicked.\r\n   * Defaults to \"/\".\r\n   */\r\n  @Input() href = '';\r\n\r\n  /**\r\n   * The layout for the component.\r\n   */\r\n  @Input() layout: LAYOUT = LAYOUT.inline;\r\n\r\n  /**\r\n   * Name displayed for the alt text.\r\n   */\r\n  @Input() logoAlt = '';\r\n\r\n  /**\r\n   * URL used for the logo.\r\n   */\r\n  @Input() logoUrl = '';\r\n\r\n  /**\r\n   * Width used for the logo (aspect ratio will be maintained).\r\n   */\r\n  @Input() logoWidth = '';\r\n  \r\n  /**\r\n   * NavItems tems to display to the user.\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n  \r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  @Input() navLayout: NavLayout = NavLayout.inline;\r\n\r\n  /**\r\n   * Optional subheading for clients with one.\r\n   */\r\n  @Input() subheading = '';\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof LAYOUT = LAYOUT;\r\n\r\n  /**\r\n   * Used by the nav to orient itself.\r\n   */\r\n  NavLayout: typeof NavLayout = NavLayout;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -474,86 +550,10 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<header>\r\n  <section class=\"branding\" [ngClass]=\"{ vertical: layout === Layout.vertical }\">\r\n    <hb-logo *ngIf=\"!!logoUrl\" [logoUrl]=\"logoUrl\" [logoWidth]=\"logoWidth\" [logoAlt]=\"logoAlt\"></hb-logo>\r\n    <div class=\"heading\" *ngIf=\"!!heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n  </section>\r\n  <hb-nav *ngIf=\"!!navItems.length\" [navItems]=\"navItems\" [layout]=\"NavLayout.inline\"></hb-nav>\r\n</header>"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-2be65d757903e1068f51ac561d212aac4eff48aa0ca9141c5d1f0e51915091c22b983193c432fa9d236673f3cb7bbabb05b7f4c417044a2de0260d85dc1263a8-1",
-            "file": "projects/tester-app/src/stories/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>    <div class=\"storybook-header\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 65,
-                    "type": "User | null",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 74,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 68,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 71,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport type { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"storybook-header\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <storybook-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></storybook-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></storybook-button>\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            primary\r\n            size=\"small\"\r\n            primary=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></storybook-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-header {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n.storybook-header svg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header h1 {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\n.storybook-header button + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.storybook-header .welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
-                    "styleUrl": "./header.css"
-                }
-            ],
-            "stylesData": "",
             "isDuplicate": true,
             "duplicateId": 1,
-            "duplicateName": "HeaderComponent-1"
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<header>\r\n  <section class=\"branding\" [ngClass]=\"{ vertical: layout === Layout.vertical }\">\r\n    <hb-logo *ngIf=\"!!logoUrl\" [logoUrl]=\"logoUrl\" [logoWidth]=\"logoWidth\" [logoAlt]=\"logoAlt\"></hb-logo>\r\n    <div class=\"heading\" *ngIf=\"!!heading\">\r\n      <h1>{{heading}}</h1>\r\n      <h2>{{subheading}}</h2>\r\n    </div>\r\n  </section>\r\n  <hb-nav *ngIf=\"!!navItems.length\" [navItems]=\"navItems\" [layout]=\"NavLayout.inline\"></hb-nav>\r\n</header>"
         },
         {
             "name": "LogoComponent",
@@ -638,7 +638,7 @@
         },
         {
             "name": "NavComponent",
-            "id": "component-NavComponent-1007505748f04c47c2ec23eb4d86cb8855cac17aad212b6e2728ea179faff1f239afe92f9e587d37807e9c8efcb9b397741054c3b82ec91dece1119d88d29712",
+            "id": "component-NavComponent-b58c8bb3a062730539d7b4a711a2c3b6cf121ebec420f9d760b9f4db064e903332a4faa0cf14ea71b8c236dac34e74514929bf386050fa7e3b679853354a7287",
             "file": "projects/nav/src/lib/nav.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -658,13 +658,13 @@
             "inputsClass": [
                 {
                     "name": "layout",
-                    "defaultValue": "Layout.inline",
+                    "defaultValue": "LAYOUT.inline",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nThe nav can be either inline or vertical.\n",
                     "description": "<p>The nav can be either inline or vertical.</p>\n",
                     "line": 16,
-                    "type": "Layout",
+                    "type": "LAYOUT",
                     "decorators": []
                 },
                 {
@@ -683,7 +683,7 @@
             "propertiesClass": [
                 {
                     "name": "Layout",
-                    "defaultValue": "Layout",
+                    "defaultValue": "LAYOUT",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -749,7 +749,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { Layout } from '../consts/layout.enum';\r\nimport { NavItem } from '../models/nav-item.interface';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'hb-nav',\r\n  templateUrl: './nav.component.html',\r\n  styleUrls: ['./nav.component.scss']\r\n})\r\nexport class NavComponent {\r\n  /**\r\n   * The nav can be either inline or vertical.\r\n   */\r\n  @Input() layout: Layout = Layout.inline;\r\n\r\n  /**\r\n   * Collection of NavItems\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof Layout = Layout;\r\n\r\n  constructor(\r\n    private router: Router,\r\n  ) { }\r\n\r\n  /**\r\n   * Navigates to the provided URL\r\n   * \r\n   * @param route string\r\n   */\r\n  navTo(route: string): void {\r\n    this.router.navigate([route]);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { LAYOUT } from '../consts/layout.enum';\r\nimport { NavItem } from '../models/nav-item.interface';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'hb-nav',\r\n  templateUrl: './nav.component.html',\r\n  styleUrls: ['./nav.component.scss']\r\n})\r\nexport class NavComponent {\r\n  /**\r\n   * The nav can be either inline or vertical.\r\n   */\r\n  @Input() layout: LAYOUT = LAYOUT.inline;\r\n\r\n  /**\r\n   * Collection of NavItems\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof LAYOUT = LAYOUT;\r\n\r\n  constructor(\r\n    private router: Router,\r\n  ) { }\r\n\r\n  /**\r\n   * Navigates to the provided URL\r\n   * \r\n   * @param route string\r\n   */\r\n  navTo(route: string): void {\r\n    this.router.navigate([route]);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -994,11 +994,7 @@
                 },
                 {
                     "type": "exports",
-                    "elements": [
-                        {
-                            "name": "HeaderComponent"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "bootstrap",
@@ -1105,21 +1101,21 @@
                 "name": "Inline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/header.stories.ts",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
             },
             {
                 "name": "Inline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             },
             {
                 "name": "Large",
@@ -1175,21 +1171,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/header.stories.ts",
+                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+                "type": "Meta<NavComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const/models:<br /><span class=\"code-inline\">Layout</span>&nbsp;<span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1225,11 +1221,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<NavComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+                "type": "Meta<HeaderComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span></p><p>Available const/models:<br /><span class=\"code-inline\">Layout</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "navItems",
@@ -1249,7 +1245,47 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+            },
+            {
+                "name": "NoHeading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
+            },
+            {
+                "name": "NoLogo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+            },
+            {
+                "name": "NoNavigation",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+            },
+            {
+                "name": "NoSubheading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/header/src/lib/header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -1305,21 +1341,21 @@
                 "name": "Vertical",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/header/src/lib/header.stories.ts",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.vertical,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
             },
             {
                 "name": "Vertical",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: Layout.vertical,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: LAYOUT.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
             }
         ],
         "functions": [],
@@ -1328,8 +1364,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/header/src/lib/header.stories.ts",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1339,8 +1375,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
+                "rawtype": "StoryObj<NavComponent>",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1383,8 +1419,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<NavComponent>",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "rawtype": "StoryObj<HeaderComponent>",
+                "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1393,7 +1429,30 @@
         ],
         "enumerations": [
             {
-                "name": "Layout",
+                "name": "LAYOUT",
+                "childs": [
+                    {
+                        "name": "inline",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "inline"
+                    },
+                    {
+                        "name": "vertical",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "vertical"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/nav/src/consts/layout.enum.ts"
+            },
+            {
+                "name": "LAYOUT",
                 "childs": [
                     {
                         "name": "inline",
@@ -1420,32 +1479,51 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "projects/header/src/consts/layout.enum.ts"
-            },
-            {
-                "name": "Layout",
-                "childs": [
-                    {
-                        "name": "inline",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "inline"
-                    },
-                    {
-                        "name": "vertical",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "vertical"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "projects/nav/src/consts/layout.enum.ts"
             }
         ],
         "groupedVariables": {
+            "projects/nav/src/lib/nav.stories.ts": [
+                {
+                    "name": "Inline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NavComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const/models:<br /><span class=\"code-inline\">Layout</span>&nbsp;<span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+                },
+                {
+                    "name": "Nested",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                },
+                {
+                    "name": "Vertical",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.vertical,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                }
+            ],
             "projects/header/src/lib/header.stories.ts": [
                 {
                     "name": "Inline",
@@ -1465,7 +1543,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(Layout) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span></p><p>Available const/models:<br /><span class=\"code-inline\">Layout</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "navItems",
@@ -1478,6 +1556,46 @@
                     "defaultValue": "[{\r\n  route: '/menu',\r\n  text: 'Menu',\r\n}, {\r\n  route: '/about-us',\r\n  text: 'About Us',\r\n}, {\r\n  route: '/contact',\r\n  text: 'Contact Us',\r\n}]"
                 },
                 {
+                    "name": "NoHeading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
+                },
+                {
+                    "name": "NoLogo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                },
+                {
+                    "name": "NoNavigation",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                },
+                {
+                    "name": "NoSubheading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/header/src/lib/header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
+                },
+                {
                     "name": "Vertical",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -1485,49 +1603,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: Layout.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
-                }
-            ],
-            "projects/nav/src/lib/nav.stories.ts": [
-                {
-                    "name": "Inline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<NavComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
-                },
-                {
-                    "name": "Nested",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
-                },
-                {
-                    "name": "Vertical",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: Layout.vertical,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: LAYOUT.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
                 }
             ],
             "projects/tester-app/src/stories/Button.stories.ts": [
@@ -1655,7 +1731,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<LogoComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Import Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -1683,9 +1759,34 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
+            "projects/nav/src/consts/layout.enum.ts": [
+                {
+                    "name": "LAYOUT",
+                    "childs": [
+                        {
+                            "name": "inline",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "inline"
+                        },
+                        {
+                            "name": "vertical",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "vertical"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/nav/src/consts/layout.enum.ts"
+                }
+            ],
             "projects/header/src/consts/layout.enum.ts": [
                 {
-                    "name": "Layout",
+                    "name": "LAYOUT",
                     "childs": [
                         {
                             "name": "inline",
@@ -1713,47 +1814,9 @@
                     "description": "",
                     "file": "projects/header/src/consts/layout.enum.ts"
                 }
-            ],
-            "projects/nav/src/consts/layout.enum.ts": [
-                {
-                    "name": "Layout",
-                    "childs": [
-                        {
-                            "name": "inline",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "inline"
-                        },
-                        {
-                            "name": "vertical",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "vertical"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "projects/nav/src/consts/layout.enum.ts"
-                }
             ]
         },
         "groupedTypeAliases": {
-            "projects/header/src/lib/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/header/src/lib/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/logo/src/lib/logo.stories.ts": [
                 {
                     "name": "Story",
@@ -1761,6 +1824,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<LogoComponent>",
                     "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/nav/src/lib/nav.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NavComponent>",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1806,13 +1882,13 @@
                     "kind": 180
                 }
             ],
-            "projects/nav/src/lib/nav.stories.ts": [
+            "projects/header/src/lib/header.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<NavComponent>",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
+                    "rawtype": "StoryObj<HeaderComponent>",
+                    "file": "projects/header/src/lib/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1823,7 +1899,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 9,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -1879,6 +1955,46 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "navItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoHeading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoLogo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoNavigation",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/header/src/lib/header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoSubheading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

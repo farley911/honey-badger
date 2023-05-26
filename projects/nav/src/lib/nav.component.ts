@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Layout } from '../consts/layout.enum';
+import { LAYOUT } from '../consts/layout.enum';
 import { NavItem } from '../models/nav-item.interface';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class NavComponent {
   /**
    * The nav can be either inline or vertical.
    */
-  @Input() layout: Layout = Layout.inline;
+  @Input() layout: LAYOUT = LAYOUT.inline;
 
   /**
    * Collection of NavItems
@@ -23,7 +23,7 @@ export class NavComponent {
   /**
    * Used by the view to map the enum to the input value.
    */
-  Layout: typeof Layout = Layout;
+  Layout: typeof LAYOUT = LAYOUT;
 
   constructor(
     private router: Router,

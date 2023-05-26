@@ -4,7 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { NavComponent } from "./nav.component";
-import { Layout } from "../consts/layout.enum";
+import { LAYOUT } from "../consts/layout.enum";
 
 const meta: Meta<NavComponent> = {
   title: 'Honey Badger/Molecules/Nav',
@@ -12,12 +12,12 @@ const meta: Meta<NavComponent> = {
   parameters: {
     docs: {
       description: {
-        component: '<p>Import Module:<br /><span class="code-inline">npm i @farley911/nav</span></p><p>Import Module:<br /><span class="code-inline">import { NavModule } from \'@farley911/nav\';</span>'
+        component: '<p>Install Module:<br /><span class="code-inline">npm i @farley911/nav</span></p><p>Import Module:<br /><span class="code-inline">import { NavModule } from \'@farley911/nav\';</span></p><p>Available const(s):<br /><span class="code-inline">LAYOUT</span></p><p>Available interface(s):<br /><span class="code-inline">NavItem</span></p>'
       }
     }
   },
   tags: ['autodocs'],
-  argTypes: {layout: { control: 'select', options: [ ...Object.keys(Layout) ]},},
+  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},
   decorators: [
     moduleMetadata({
       declarations: [],
@@ -31,7 +31,7 @@ type Story = StoryObj<NavComponent>;
 
 export const Inline: Story = {
   args: {
-    layout: Layout.inline,
+    layout: LAYOUT.inline,
     navItems: [{
       route: '/',
       text: 'Home',
@@ -47,7 +47,7 @@ export const Inline: Story = {
 
 export const Nested: Story = {
   args: {
-    layout: Layout.inline,
+    layout: LAYOUT.inline,
     navItems: [{
       route: '/',
       text: 'Home',
@@ -69,7 +69,7 @@ export const Nested: Story = {
 
 export const Vertical: Story = {
   args: {
-    layout: Layout.vertical,
+    layout: LAYOUT.vertical,
     navItems: [{
       route: '/',
       text: 'Home',
