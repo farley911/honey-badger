@@ -62,7 +62,7 @@ const meta = {
 cd .\honey-badger\
 ```
 ```
-ng g library <package-name> --prefix hb
+ng g lib <package-name> --prefix hb
 ```
 * Add the .html and .scss files if needed.
 * In `package`.component.ts change `template` to `templateUrl` and `styles` to `styleUrls`, populate the values.
