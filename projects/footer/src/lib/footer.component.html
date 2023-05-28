@@ -1,5 +1,12 @@
 <section class="footer">
-  <hb-nav [navItems]="navItems"></hb-nav>
-  <ng-content></ng-content>
-  <ng-content select="[legalize]"></ng-content>
+  <div>
+    <ng-content></ng-content>
+    <ng-content select="[legalize]"></ng-content>
+  </div>
+  <div>
+    <hb-nav [navItems]="navItems"></hb-nav>
+    <div class="social-networks">
+      
+    </div>
+  </div>
 </section>

@@ -40,6 +40,7 @@ export const Primary: Story = {
       <hb-footer [navItems]="navItems">
         <p>
           <span class="company-name">Wayne Enterprises</span><br />
+          <a href="mailto:bruce@wayneenterprises.com">bruce@wayneenterprises.com</a><br />
           1 Wayne Manor<br />
           (555) 555-5555
         </p>

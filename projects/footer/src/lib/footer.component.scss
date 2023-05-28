@@ -1,11 +1,18 @@
 .footer {
-  text-align: center;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  :nth-child(1) {
+    flex: 1;
+  }
 
   .company-name {
     font-weight: bold;
   }
 
   [legalize] {
+    opacity: .7;
     font-size: .7rem;
   }
 }
