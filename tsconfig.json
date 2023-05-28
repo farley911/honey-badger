@@ -15,9 +15,6 @@
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "./dist/out-tsc",
     "paths": {
-      "footer": [
-        "dist/footer"
-      ],
       "header": [
         "dist/header"
       ],
