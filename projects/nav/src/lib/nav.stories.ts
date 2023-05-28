@@ -47,7 +47,6 @@ export const Inline: Story = {
 
 export const Nested: Story = {
   args: {
-    layout: LAYOUT.inline,
     navItems: [{
       route: '/',
       text: 'Home',

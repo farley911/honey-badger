@@ -247,7 +247,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-4ce45989bdb958284e23443c4dab75c45da548ff1df60b9f31c0108fa024330acf763b64625303b2db17fc52fd40f14dba50431fc4ea61bb0ae6089dd98a65ac",
+            "id": "component-FooterComponent-8bb34910f102d8b5702d816751fd7e66ce6f4643c8ff3b628c7581d95637fa5d54bff5ca707f4ad39887d40225dbb02446e99acaf624e732ef53a24314128b41",
             "file": "projects/footer/src/lib/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -259,11 +259,37 @@
                 "./footer.component.scss"
             ],
             "styles": [],
-            "template": "./footer.component.html",
-            "templateUrl": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "logo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "LogoComponent",
+                    "decorators": []
+                },
+                {
+                    "name": "navItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "NavItem[]",
+                    "decorators": []
+                },
+                {
+                    "name": "socialNetworks",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -276,7 +302,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'hb-footer',\n  template: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { LogoComponent } from '@farley911/logo';\nimport { NavItem } from '@farley911/nav/models/nav-item.interface';\n\n@Component({\n  selector: 'hb-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {\n  @Input() navItems: NavItem[];\n  @Input() logo: LogoComponent;\n  @Input() socialNetworks: unknown;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -284,7 +310,8 @@
                     "styleUrl": "./footer.component.scss"
                 }
             ],
-            "stylesData": ""
+            "stylesData": "",
+            "templateData": "<section class=\"footer\">\r\n  <hb-nav [navItems]=\"navItems\"></hb-nav>\r\n  <ng-content select=\"[contactInfo]\"></ng-content>\r\n  <ng-content select=\"[legalize]\"></ng-content>\r\n</section>"
         },
         {
             "name": "HeaderComponent",
@@ -893,13 +920,13 @@
         },
         {
             "name": "FooterModule",
-            "id": "module-FooterModule-4baee58117117368ae245e8078a1ca0e78de39ed331d8854ae6ca32ac0ec6108051d542cb085b419c41b5d5c86229de13ef0823f608cd34330548da31d5ff4c1",
+            "id": "module-FooterModule-dad6344e5921fff2937561ca5171fad7094c74a4651088432626dfbb287be18c6e020beb1e75b36629f178ce7120a990585f669d7257dc72de38f7b60fed8a78",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/footer/src/lib/footer.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { FooterComponent } from './footer.component';\n\n@NgModule({\n  declarations: [\n    FooterComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    FooterComponent\n  ]\n})\nexport class FooterModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { NavModule } from '@farley911/nav';\nimport { HeaderModule } from '@farley911/header';\n\nimport { FooterComponent } from './footer.component';\n\n@NgModule({\n  declarations: [\n    FooterComponent\n  ],\n  imports: [\n    HeaderModule,\n    NavModule,\n  ],\n  exports: [\n    FooterComponent\n  ]\n})\nexport class FooterModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -915,7 +942,14 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "HeaderModule"
+                        },
+                        {
+                            "name": "NavModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -1155,7 +1189,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FooterComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Footer',\r\n  component: FooterComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/footer</span></p><p>Import Module:<br /><span class=\"code-inline\">import { FooterModule } from \\'@farley911/footer\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      // imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Footer',\r\n  component: FooterComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/footer</span></p><p>Import Module:<br /><span class=\"code-inline\">import { FooterModule } from \\'@farley911/footer\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    }),\r\n    componentWrapperDecorator(FooterComponent),\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1166,6 +1200,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<HeaderComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Header',\r\n  component: HeaderComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/header</span></p><p>Import Module:<br /><span class=\"code-inline\">import { HeaderModule } from \\'@farley911/header\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1201,16 +1245,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1235,7 +1269,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
             },
             {
                 "name": "NoHeading",
@@ -1295,17 +1329,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n  }\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer>\r\n        <p contactInfo>Contact Info</p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -1316,6 +1340,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -1386,6 +1420,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
@@ -1410,17 +1455,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Page>",
                 "file": "projects/tester-app/src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1604,7 +1638,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
                 },
                 {
                     "name": "Vertical",
@@ -1742,7 +1776,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FooterComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Footer',\r\n  component: FooterComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/footer</span></p><p>Import Module:<br /><span class=\"code-inline\">import { FooterModule } from \\'@farley911/footer\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      // imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Organisms/Footer',\r\n  component: FooterComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/footer</span></p><p>Import Module:<br /><span class=\"code-inline\">import { FooterModule } from \\'@farley911/footer\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [LogoComponent, NavComponent],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],\r\n    }),\r\n    componentWrapperDecorator(FooterComponent),\r\n  ]\r\n}"
                 },
                 {
                     "name": "Primary",
@@ -1752,7 +1786,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer>\r\n        <p contactInfo>Contact Info</p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
                 }
             ],
             "projects/logo/src/lib/logo.stories.ts": [
@@ -1876,6 +1910,19 @@
                     "kind": 180
                 }
             ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
             "projects/tester-app/src/stories/Button.stories.ts": [
                 {
                     "name": "Story",
@@ -1915,19 +1962,6 @@
                     "kind": 180
                 }
             ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<LogoComponent>",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/nav/src/lib/nav.stories.ts": [
                 {
                     "name": "Story",
@@ -1954,7 +1988,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
