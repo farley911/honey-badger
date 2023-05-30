@@ -1,5 +1,5 @@
 /*
- * Public API Surface of social-network-icon
+ * Public API Surface of social-network-logo
  */
 
 export * from './lib/social-network-logo.component';

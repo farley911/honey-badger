@@ -27,8 +27,11 @@
       "nav": [
         "dist/nav"
       ],
-      "social-network-icon": [
-        "dist/social-network-icon"
+      "social-network-logo": [
+        "dist/social-network-logo"
+      ],
+      "social-network-links": [
+        "dist/social-network-links"
       ],
     },
     "sourceMap": true,
