@@ -25,6 +25,6 @@ type Story = StoryObj<SocialNetworkLogoComponent>;
 export const Primary: Story = {
   args: {
     socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),
-    width: '35px',
+    width: 35,
   }
 }

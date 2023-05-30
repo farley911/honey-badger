@@ -18,7 +18,7 @@ export class NavComponent {
   /**
    * Collection of NavItems
    */
-  @Input() navItems: NavItem[] = [];
+  @Input({ required: true }) navItems: NavItem[];
 
   /**
    * Used by the view to map the enum to the input value.

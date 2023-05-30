@@ -594,7 +594,7 @@
         },
         {
             "name": "LogoComponent",
-            "id": "component-LogoComponent-7d993bb6783736e6ce7f9ddbc9241e042e73cc1f409ca7087fbe4420e708054d04e98d631d9e3336af602576f20280a3184e88a15a91c9c7e7c96f80ee1e2996",
+            "id": "component-LogoComponent-62a2ae93b491290db7c177b11cb244bdb5108d97669b605bf45447be2df8367c20577e0bc8a1344e07210db95bc708b563444e06c488ffc17e2c8564807d1557",
             "file": "projects/logo/src/lib/logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -622,10 +622,12 @@
                     "decorators": []
                 },
                 {
+                    "required": true,
                     "name": "logoAlt",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "optional": false,
                     "rawdescription": "\n\nName displayed for the alt and tooltip text.\n",
                     "description": "<p>Name displayed for the alt and tooltip text.</p>\n",
                     "line": 18,
@@ -633,10 +635,12 @@
                     "decorators": []
                 },
                 {
+                    "required": true,
                     "name": "logoUrl",
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "optional": false,
                     "rawdescription": "\n\nURL used for the logo.\n",
                     "description": "<p>URL used for the logo.</p>\n",
                     "line": 23,
@@ -644,14 +648,16 @@
                     "decorators": []
                 },
                 {
+                    "required": true,
                     "name": "logoWidth",
-                    "defaultValue": "''",
+                    "defaultValue": "75",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "optional": false,
                     "rawdescription": "\n\nWidth used for the logo (aspect ratio will be maintained).\n",
                     "description": "<p>Width used for the logo (aspect ratio will be maintained).</p>\n",
                     "line": 28,
-                    "type": "string",
+                    "type": "number",
                     "decorators": []
                 }
             ],
@@ -667,7 +673,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'hb-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: []\n})\nexport class LogoComponent {\n  /**\n   * Href to use when the logo is clicked.\n   * Defaults to \"/\".\n   */\n  @Input() href = '/';\n\n  /**\n   * Name displayed for the alt and tooltip text.\n   */\n  @Input() logoAlt = '';\n\n  /**\n   * URL used for the logo.\n   */\n  @Input() logoUrl = '';\n\n  /**\n  * Width used for the logo (aspect ratio will be maintained).\n  */\n  @Input() logoWidth = '';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'hb-logo',\n  templateUrl: './logo.component.html',\n  styleUrls: []\n})\nexport class LogoComponent {\n  /**\n   * Href to use when the logo is clicked.\n   * Defaults to \"/\".\n   */\n  @Input() href = '/';\n\n  /**\n   * Name displayed for the alt and tooltip text.\n   */\n  @Input({ required: true }) logoAlt = '';\n\n  /**\n   * URL used for the logo.\n   */\n  @Input({ required: true }) logoUrl = '';\n\n  /**\n  * Width used for the logo (aspect ratio will be maintained).\n  */\n  @Input({ required: true }) logoWidth = 75;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -675,7 +681,7 @@
         },
         {
             "name": "NavComponent",
-            "id": "component-NavComponent-b58c8bb3a062730539d7b4a711a2c3b6cf121ebec420f9d760b9f4db064e903332a4faa0cf14ea71b8c236dac34e74514929bf386050fa7e3b679853354a7287",
+            "id": "component-NavComponent-f817c163fc056d1fe06d422433eda8458cee955d0d824fe359d5c92e51a8b14ccff15d87c30ffc2ffbd2da0dedeff94967ae332010ee09fd34cf13bcb393d503",
             "file": "projects/nav/src/lib/nav.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -705,10 +711,11 @@
                     "decorators": []
                 },
                 {
+                    "required": true,
                     "name": "navItems",
-                    "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "optional": false,
                     "rawdescription": "\n\nCollection of NavItems\n",
                     "description": "<p>Collection of NavItems</p>\n",
                     "line": 21,
@@ -752,8 +759,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 772,
-                                "end": 777,
+                                "pos": 785,
+                                "end": 790,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -764,8 +771,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 766,
-                                "end": 771,
+                                "pos": 779,
+                                "end": 784,
                                 "flags": 8421376,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -786,7 +793,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { LAYOUT } from '../consts/layout.enum';\r\nimport { NavItem } from '../models/nav-item.interface';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'hb-nav',\r\n  templateUrl: './nav.component.html',\r\n  styleUrls: ['./nav.component.scss']\r\n})\r\nexport class NavComponent {\r\n  /**\r\n   * The nav can be either inline or vertical.\r\n   */\r\n  @Input() layout: LAYOUT = LAYOUT.inline;\r\n\r\n  /**\r\n   * Collection of NavItems\r\n   */\r\n  @Input() navItems: NavItem[] = [];\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof LAYOUT = LAYOUT;\r\n\r\n  constructor(\r\n    private router: Router,\r\n  ) { }\r\n\r\n  /**\r\n   * Navigates to the provided URL\r\n   * \r\n   * @param route string\r\n   */\r\n  navTo(route: string): void {\r\n    this.router.navigate([route]);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\nimport { LAYOUT } from '../consts/layout.enum';\r\nimport { NavItem } from '../models/nav-item.interface';\r\nimport { Router } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'hb-nav',\r\n  templateUrl: './nav.component.html',\r\n  styleUrls: ['./nav.component.scss']\r\n})\r\nexport class NavComponent {\r\n  /**\r\n   * The nav can be either inline or vertical.\r\n   */\r\n  @Input() layout: LAYOUT = LAYOUT.inline;\r\n\r\n  /**\r\n   * Collection of NavItems\r\n   */\r\n  @Input({ required: true }) navItems: NavItem[];\r\n\r\n  /**\r\n   * Used by the view to map the enum to the input value.\r\n   */\r\n  Layout: typeof LAYOUT = LAYOUT;\r\n\r\n  constructor(\r\n    private router: Router,\r\n  ) { }\r\n\r\n  /**\r\n   * Navigates to the provided URL\r\n   * \r\n   * @param route string\r\n   */\r\n  navTo(route: string): void {\r\n    this.router.navigate([route]);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -908,7 +915,7 @@
         },
         {
             "name": "SocialNetworkLogoComponent",
-            "id": "component-SocialNetworkLogoComponent-1c2188e84e7488fe391ab9d6522e650ed81e532a0ba4354aafbd9f90089a0b4524998870529016dba70356446b772820a80dbae9b1f3829361704f5985c4f56d",
+            "id": "component-SocialNetworkLogoComponent-ff82902087fc6aa73c46d4fef56d580079bb5451cc74edb386e5d2b486ed0c728e4702212524a9184baff7cd074a1025710e8b00ef20df7aa366958d1e9b2ed3",
             "file": "projects/social-network-logo/src/lib/social-network-logo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -916,9 +923,7 @@
             "outputs": [],
             "providers": [],
             "selector": "hb-social-network-logo",
-            "styleUrls": [
-                "social-network-logo.component.scss"
-            ],
+            "styleUrls": [],
             "styles": [],
             "templateUrl": [
                 "social-network-logo.component.html"
@@ -927,9 +932,11 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "required": true,
                     "name": "socialNetwork",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "optional": false,
                     "rawdescription": "\n\nProvides the social network that will be used for the logo\n",
                     "description": "<p>Provides the social network that will be used for the logo</p>\n",
                     "line": 14,
@@ -938,12 +945,13 @@
                 },
                 {
                     "name": "width",
+                    "defaultValue": "35",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nSpecifies the width of the logo. Aspect ratio is locked to 1:1.\n",
                     "description": "<p>Specifies the width of the logo. Aspect ratio is locked to 1:1.</p>\n",
                     "line": 19,
-                    "type": "string",
+                    "type": "number",
                     "decorators": []
                 }
             ],
@@ -959,16 +967,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { SocialNetwork } from '../models/social-network.interface';\n\n@Component({\n  selector: 'hb-social-network-logo',\n  templateUrl: 'social-network-logo.component.html',\n  styleUrls: [ 'social-network-logo.component.scss' ]\n})\nexport class SocialNetworkLogoComponent {\n  /**\n   * Provides the social network that will be used for the logo\n   */\n  @Input() socialNetwork: SocialNetwork;\n\n  /**\n   * Specifies the width of the logo. Aspect ratio is locked to 1:1.\n   */\n  @Input() width: string;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { SocialNetwork } from '../models/social-network.interface';\n\n@Component({\n  selector: 'hb-social-network-logo',\n  templateUrl: 'social-network-logo.component.html',\n  styleUrls: []\n})\nexport class SocialNetworkLogoComponent {\n  /**\n   * Provides the social network that will be used for the logo\n   */\n  @Input({ required: true }) socialNetwork: SocialNetwork;\n\n  /**\n   * Specifies the width of the logo. Aspect ratio is locked to 1:1.\n   */ \n  @Input() width: number = 35;\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".social-network-logo {  \r\n  border-radius: 3px;\r\n  overflow: hidden;\r\n}\r\n",
-                    "styleUrl": "social-network-logo.component.scss"
-                }
-            ],
+            "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<section class=\"social-network-logo\">\r\n  <img [src]=\"socialNetwork?.logo\" [alt]=\"socialNetwork?.name\" [attr.width]=\"width\" />\r\n</section>"
+            "templateData": "<section class=\"social-network-logo\">\r\n  <img [src]=\"socialNetwork?.logo\" [alt]=\"socialNetwork?.name\" [title]=\"socialNetwork?.name\" [attr.width]=\"width\" />\r\n</section>"
         }
     ],
     "modules": [
@@ -1347,36 +1350,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Button>",
-                "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  render: (args: Button) => ({\r\n    props: {\r\n      backgroundColor: null,\r\n      ...args,\r\n    },\r\n  }),\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Header>",
-                "defaultValue": "{\r\n  title: 'Example/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<Page>",
-                "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1402,6 +1375,36 @@
                 "deprecationMessage": "",
                 "type": "Meta<NavComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p><p>Available interface(s):<br /><span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Button>",
+                "defaultValue": "{\r\n  title: 'Example/Button',\r\n  component: Button,\r\n  tags: ['autodocs'],\r\n  render: (args: Button) => ({\r\n    props: {\r\n      backgroundColor: null,\r\n      ...args,\r\n    },\r\n  }),\r\n  argTypes: {\r\n    backgroundColor: {\r\n      control: 'color',\r\n    },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Header>",
+                "defaultValue": "{\r\n  title: 'Example/Header',\r\n  component: Header,\r\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/angular/writing-docs/autodocs\r\n  tags: ['autodocs'],\r\n  render: (args) => ({ props: args }),\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<Page>",
+                "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "navItems",
@@ -1487,21 +1490,11 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -1511,7 +1504,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: '75px',\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -1592,39 +1595,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<Button>",
-                "file": "projects/tester-app/src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<Header>",
-                "file": "projects/tester-app/src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<Page>",
-                "file": "projects/tester-app/src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<LogoComponent>",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
@@ -1649,6 +1619,39 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<NavComponent>",
                 "file": "projects/nav/src/lib/nav.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Button>",
+                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Header>",
+                "file": "projects/tester-app/src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<Page>",
+                "file": "projects/tester-app/src/stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2080,7 +2083,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
                 }
             ],
             "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
@@ -2102,7 +2105,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: '75px',\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
                 }
             ],
             "projects/tester-app/.storybook/preview.ts": [
@@ -2307,45 +2310,6 @@
                     "kind": 180
                 }
             ],
-            "projects/tester-app/src/stories/Button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Button>",
-                    "file": "projects/tester-app/src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/tester-app/src/stories/Header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Header>",
-                    "file": "projects/tester-app/src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/tester-app/src/stories/Page.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<Page>",
-                    "file": "projects/tester-app/src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/logo/src/lib/logo.stories.ts": [
                 {
                     "name": "Story",
@@ -2379,6 +2343,45 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<NavComponent>",
                     "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/tester-app/src/stories/Button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Button>",
+                    "file": "projects/tester-app/src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/tester-app/src/stories/Header.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Header>",
+                    "file": "projects/tester-app/src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/tester-app/src/stories/Page.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<Page>",
+                    "file": "projects/tester-app/src/stories/Page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

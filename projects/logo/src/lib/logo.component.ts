@@ -15,15 +15,15 @@ export class LogoComponent {
   /**
    * Name displayed for the alt and tooltip text.
    */
-  @Input() logoAlt = '';
+  @Input({ required: true }) logoAlt = '';
 
   /**
    * URL used for the logo.
    */
-  @Input() logoUrl = '';
+  @Input({ required: true }) logoUrl = '';
 
   /**
   * Width used for the logo (aspect ratio will be maintained).
   */
-  @Input() logoWidth = '';
+  @Input({ required: true }) logoWidth = 75;
 }

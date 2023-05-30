@@ -29,6 +29,6 @@ export const Primary: Story = {
     href: '/',
     logoAlt: 'Wayne Enterprises',
     logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',
-    logoWidth: '200px',
+    logoWidth: 200,
   },
 };
