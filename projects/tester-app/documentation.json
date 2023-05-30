@@ -677,7 +677,7 @@
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": "<a [href]=\"href\">\r\n  <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" [alt]=\"logoAlt\" />\r\n</a>\r\n"
+            "templateData": "<a [href]=\"href\">\r\n  <img [src]=\"logoUrl\" [attr.width]=\"logoWidth\" [alt]=\"logoAlt\" [title]=\"logoAlt\" />\r\n</a>\r\n"
         },
         {
             "name": "NavComponent",
@@ -1350,21 +1350,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SocialNetworkLogoComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Icon',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1490,21 +1490,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -1595,8 +1595,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
+                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1606,8 +1606,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
-                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2064,28 +2064,6 @@
                     "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer [navItems]=\"navItems\">\r\n        <p>\r\n          <span class=\"company-name\">Wayne Enterprises</span><br />\r\n          <a href=\"mailto:bruce@wayneenterprises.com\">bruce@wayneenterprises.com</a><br />\r\n          1 Wayne Manor<br />\r\n          (555) 555-5555\r\n        </p>\r\n        <p legalize>\r\n          &copy; Wayne Enterprises 2023\r\n        </p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
                 }
             ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<LogoComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
-                }
-            ],
             "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
                 {
                     "name": "meta",
@@ -2106,6 +2084,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
+                }
+            ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LogoComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
                 }
             ],
             "projects/tester-app/.storybook/preview.ts": [
@@ -2310,19 +2310,6 @@
                     "kind": 180
                 }
             ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<LogoComponent>",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
                 {
                     "name": "Story",
@@ -2330,6 +2317,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SocialNetworkLogoComponent>",
                     "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
