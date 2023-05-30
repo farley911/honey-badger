@@ -13,5 +13,6 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: [{ from: '../../social-network-logo/assets', to: '/assets' }]
 };
 export default config;

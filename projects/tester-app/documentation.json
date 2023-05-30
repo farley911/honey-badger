@@ -52,6 +52,38 @@
             "methods": []
         },
         {
+            "name": "SocialNetwork",
+            "id": "interface-SocialNetwork-112eb3317196b4788359cf64a30dff0f5fd1fe100a925271fd25117dbf41ed89026ff52f244fcacd6df4c160bd4cacb777e2df3b11dd0688ba55047d14f8fc15",
+            "file": "projects/social-network-logo/src/models/social-network.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { SocialNetworkNames } from \"../consts/social-network-names.enum\";\r\n\r\nexport interface SocialNetwork {\r\n  name: SocialNetworkNames,\r\n  logo: string;\r\n} \r\n",
+            "properties": [
+                {
+                    "name": "logo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SocialNetworkNames",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 168,
+            "methods": []
+        },
+        {
             "name": "User",
             "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
             "file": "projects/tester-app/src/stories/User.ts",
@@ -247,20 +279,22 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-8bb34910f102d8b5702d816751fd7e66ce6f4643c8ff3b628c7581d95637fa5d54bff5ca707f4ad39887d40225dbb02446e99acaf624e732ef53a24314128b41",
+            "id": "component-FooterComponent-f5bb8e596435ef90d404c61d35c6da31f9df288fe0518a7a25db3245756f2e83367cd52408774508a5c432cb1adc6dc344d9574e26fe93d20ba352973bb7946b",
             "file": "projects/footer/src/lib/footer.component.ts",
-            "encapsulation": [],
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "hb-footer",
             "styleUrls": [
-                "./footer.component.scss"
+                "footer.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./footer.component.html"
+                "footer.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -269,7 +303,7 @@
                     "name": "logo",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 14,
                     "type": "LogoComponent",
                     "decorators": []
                 },
@@ -277,7 +311,7 @@
                     "name": "navItems",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 13,
                     "type": "NavItem[]",
                     "decorators": []
                 },
@@ -285,7 +319,7 @@
                     "name": "socialNetworks",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "",
                     "decorators": []
                 }
@@ -302,16 +336,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { LogoComponent } from '@farley911/logo';\nimport { NavItem } from '@farley911/nav/models/nav-item.interface';\n\n@Component({\n  selector: 'hb-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent {\n  @Input() navItems: NavItem[];\n  @Input() logo: LogoComponent;\n  @Input() socialNetworks: unknown;\n}\n",
+            "sourceCode": "import { ViewEncapsulation } from '@angular/compiler';\nimport { Component, Input } from '@angular/core';\nimport { LogoComponent } from '@farley911/logo';\nimport { NavItem } from '@farley911/nav/models/nav-item.interface';\n\n@Component({\n  selector: 'hb-footer',\n  templateUrl: 'footer.component.html',\n  styleUrls: ['footer.component.scss'],\n  encapsulation: ViewEncapsulation.None,\n})\nexport class FooterComponent {\n  @Input() navItems: NavItem[];\n  @Input() logo: LogoComponent;\n  @Input() socialNetworks: unknown;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "",
-                    "styleUrl": "./footer.component.scss"
+                    "data": ".footer {\r\n  display: flex;\r\n  flex: 1;\r\n  flex-direction: row;\r\n\r\n  :nth-child(1) {\r\n    flex: 1;\r\n  }\r\n\r\n  .company-name {\r\n    font-weight: bold;\r\n  }\r\n\r\n  [legalize] {\r\n    opacity: .7;\r\n    font-size: .7rem;\r\n  }\r\n}\r\n",
+                    "styleUrl": "footer.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<section class=\"footer\">\r\n  <hb-nav [navItems]=\"navItems\"></hb-nav>\r\n  <ng-content select=\"[contactInfo]\"></ng-content>\r\n  <ng-content select=\"[legalize]\"></ng-content>\r\n</section>"
+            "templateData": "<section class=\"footer\">\r\n  <div>\r\n    <ng-content></ng-content>\r\n    <ng-content select=\"[legalize]\"></ng-content>\r\n  </div>\r\n  <div>\r\n    <hb-nav [navItems]=\"navItems\"></hb-nav>\r\n    <div class=\"social-networks\">\r\n      \r\n    </div>\r\n  </div>\r\n</section>"
         },
         {
             "name": "HeaderComponent",
@@ -871,6 +905,70 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "SocialNetworkLogoComponent",
+            "id": "component-SocialNetworkLogoComponent-1c2188e84e7488fe391ab9d6522e650ed81e532a0ba4354aafbd9f90089a0b4524998870529016dba70356446b772820a80dbae9b1f3829361704f5985c4f56d",
+            "file": "projects/social-network-logo/src/lib/social-network-logo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "hb-social-network-logo",
+            "styleUrls": [
+                "social-network-logo.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "social-network-logo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "socialNetwork",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProvides the social network that will be used for the logo\n",
+                    "description": "<p>Provides the social network that will be used for the logo</p>\n",
+                    "line": 14,
+                    "type": "SocialNetwork",
+                    "decorators": []
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nSpecifies the width of the logo. Aspect ratio is locked to 1:1.\n",
+                    "description": "<p>Specifies the width of the logo. Aspect ratio is locked to 1:1.</p>\n",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { SocialNetwork } from '../models/social-network.interface';\n\n@Component({\n  selector: 'hb-social-network-logo',\n  templateUrl: 'social-network-logo.component.html',\n  styleUrls: [ 'social-network-logo.component.scss' ]\n})\nexport class SocialNetworkLogoComponent {\n  /**\n   * Provides the social network that will be used for the logo\n   */\n  @Input() socialNetwork: SocialNetwork;\n\n  /**\n   * Specifies the width of the logo. Aspect ratio is locked to 1:1.\n   */\n  @Input() width: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".social-network-logo {  \r\n  border-radius: 3px;\r\n  overflow: hidden;\r\n}\r\n",
+                    "styleUrl": "social-network-logo.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"social-network-logo\">\r\n  <img [src]=\"socialNetwork?.logo\" [alt]=\"socialNetwork?.name\" [attr.width]=\"width\" />\r\n</section>"
         }
     ],
     "modules": [
@@ -1107,6 +1205,50 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "SocialNetworkLogoModule",
+            "id": "module-SocialNetworkLogoModule-daccd78e928079a5c449634ae42413bf4562a8b5a7d70acccd7d860790ab16e26a19bb039cb374989a382e396d62faf276a95ad3e0eafb86d1c1322b144f8e9b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/social-network-logo/src/lib/social-network-logo.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\n\nimport { SocialNetworkLogoComponent } from './social-network-logo.component';\n\n@NgModule({\n  declarations: [\n    SocialNetworkLogoComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    SocialNetworkLogoComponent\n  ]\n})\nexport class SocialNetworkLogoModule {\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SocialNetworkLogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SocialNetworkLogoComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -1119,7 +1261,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
             },
             {
                 "name": "Inline",
@@ -1205,16 +1347,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1240,6 +1372,26 @@
                 "deprecationMessage": "",
                 "type": "Meta<Page>",
                 "defaultValue": "{\r\n  title: 'Example/Page',\r\n  component: Page,\r\n  parameters: {\r\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\r\n    layout: 'fullscreen',\r\n  },\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [Button, Header],\r\n      imports: [CommonModule],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SocialNetworkLogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Icon',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -1289,7 +1441,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    navItems,\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
             },
             {
                 "name": "NoNavigation",
@@ -1299,7 +1451,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
             },
             {
                 "name": "NoSubheading",
@@ -1309,7 +1461,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -1329,7 +1481,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer>\r\n        <p contactInfo>Contact Info</p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
+                "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer [navItems]=\"navItems\">\r\n        <p>\r\n          <span class=\"company-name\">Wayne Enterprises</span><br />\r\n          <a href=\"mailto:bruce@wayneenterprises.com\">bruce@wayneenterprises.com</a><br />\r\n          1 Wayne Manor<br />\r\n          (555) 555-5555\r\n        </p>\r\n        <p legalize>\r\n          &copy; Wayne Enterprises 2023\r\n        </p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
                 "name": "Primary",
@@ -1345,11 +1507,11 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/tester-app/src/stories/Button.stories.ts",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    primary: true,\r\n    label: 'Button',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: '75px',\r\n  }\r\n}"
             },
             {
                 "name": "Secondary",
@@ -1372,6 +1534,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
+                "name": "SOCIAL_NETWORKS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Map<SocialNetworkNames, SocialNetwork>",
+                "defaultValue": "new Map([\r\n  [SocialNetworkNames.discord, {\r\n    name: SocialNetworkNames.discord,\r\n    logo: \"assets/discord.png\",\r\n  },],\r\n  [SocialNetworkNames.facebook, {\r\n    name: SocialNetworkNames.facebook,\r\n    logo: \"assets/facebook.png\",\r\n  },],\r\n  [SocialNetworkNames.fansly, {\r\n    name: SocialNetworkNames.fansly,\r\n    logo: \"assets/fansly.png\",\r\n  },],\r\n  [SocialNetworkNames.instagram, {\r\n    name: SocialNetworkNames.instagram,\r\n    logo: \"assets/instagram.png\",\r\n  },],\r\n  [SocialNetworkNames.linkedin, {\r\n    name: SocialNetworkNames.linkedin,\r\n    logo: \"assets/linkedin.png\",\r\n  },],\r\n  [SocialNetworkNames.onlyfans, {\r\n    name: SocialNetworkNames.onlyfans,\r\n    logo: \"assets/onlyfans.png\",\r\n  },],\r\n  [SocialNetworkNames.snapchat, {\r\n    name: SocialNetworkNames.snapchat,\r\n    logo: \"assets/snapchat.png\",\r\n  },],\r\n  [SocialNetworkNames.telegram, {\r\n    name: SocialNetworkNames.telegram,\r\n    logo: \"assets/telegram.png\",\r\n  },],\r\n  [SocialNetworkNames.tiktok, {\r\n    name: SocialNetworkNames.tiktok,\r\n    logo: \"assets/tiktok.png\",\r\n  },],\r\n  [SocialNetworkNames.twitch, {\r\n    name: SocialNetworkNames.twitch,\r\n    logo: \"assets/twitch.png\",\r\n  },],\r\n  [SocialNetworkNames.twitter, {\r\n    name: SocialNetworkNames.twitter,\r\n    logo: \"assets/twitter.png\",\r\n  },],\r\n  [SocialNetworkNames.whatsapp, {\r\n    name: SocialNetworkNames.whatsapp,\r\n    logo: \"assets/whatsapp.png\",\r\n  },],\r\n  [SocialNetworkNames.youtube, {\r\n    name: SocialNetworkNames.youtube,\r\n    logo: \"assets/youtube.png\",\r\n  },],\r\n])"
+            },
+            {
                 "name": "Vertical",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1379,7 +1551,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: LAYOUT.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    layout: LAYOUT.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
             },
             {
                 "name": "Vertical",
@@ -1420,17 +1592,6 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<Button>",
                 "file": "projects/tester-app/src/stories/Button.stories.ts",
                 "deprecated": false,
@@ -1455,6 +1616,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<Page>",
                 "file": "projects/tester-app/src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1524,6 +1707,95 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "projects/nav/src/consts/layout.enum.ts"
+            },
+            {
+                "name": "SocialNetworkNames",
+                "childs": [
+                    {
+                        "name": "discord",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Discord"
+                    },
+                    {
+                        "name": "facebook",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Facebook"
+                    },
+                    {
+                        "name": "fansly",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Fansly"
+                    },
+                    {
+                        "name": "instagram",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Instagram"
+                    },
+                    {
+                        "name": "linkedin",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "LinkedIn"
+                    },
+                    {
+                        "name": "onlyfans",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "OnlyFans"
+                    },
+                    {
+                        "name": "snapchat",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Snapchat"
+                    },
+                    {
+                        "name": "telegram",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "telegram"
+                    },
+                    {
+                        "name": "tiktok",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "TikTok"
+                    },
+                    {
+                        "name": "twitch",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "twitch"
+                    },
+                    {
+                        "name": "twitter",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Twitter"
+                    },
+                    {
+                        "name": "whatsapp",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "WhatsApp"
+                    },
+                    {
+                        "name": "youtube",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Youtube"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/social-network-logo/src/consts/social-network-names.enum.ts"
             }
         ],
         "groupedVariables": {
@@ -1536,7 +1808,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1576,7 +1848,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    navItems,\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
                 },
                 {
                     "name": "NoNavigation",
@@ -1586,7 +1858,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
                 },
                 {
                     "name": "NoSubheading",
@@ -1596,7 +1868,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n  },\r\n}"
                 },
                 {
                     "name": "Vertical",
@@ -1606,7 +1878,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    heading: \"Wayne Enterprises\",\r\n    href: '/',\r\n    layout: LAYOUT.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: \"Not affiliated with Batman\",\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    heading: 'Wayne Enterprises',\r\n    href: '/',\r\n    layout: LAYOUT.vertical,\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '75px',\r\n    navItems,\r\n    subheading: 'Not affiliated with Batman',\r\n  },\r\n}"
                 }
             ],
             "projects/nav/src/lib/nav.stories.ts": [
@@ -1786,7 +2058,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer>\r\n        <p contactInfo>Contact Info</p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer [navItems]=\"navItems\">\r\n        <p>\r\n          <span class=\"company-name\">Wayne Enterprises</span><br />\r\n          <a href=\"mailto:bruce@wayneenterprises.com\">bruce@wayneenterprises.com</a><br />\r\n          1 Wayne Manor<br />\r\n          (555) 555-5555\r\n        </p>\r\n        <p legalize>\r\n          &copy; Wayne Enterprises 2023\r\n        </p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
                 }
             ],
             "projects/logo/src/lib/logo.stories.ts": [
@@ -1811,6 +2083,28 @@
                     "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: '200px',\r\n  },\r\n}"
                 }
             ],
+            "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SocialNetworkLogoComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Icon',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: '75px',\r\n  }\r\n}"
+                }
+            ],
             "projects/tester-app/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -1821,6 +2115,18 @@
                     "deprecationMessage": "",
                     "type": "Preview",
                     "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n  decorators: [componentWrapperDecorator((story) => `<div class='mat-typography'>${story}</div>`)],\r\n}"
+                }
+            ],
+            "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts": [
+                {
+                    "name": "SOCIAL_NETWORKS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Map<SocialNetworkNames, SocialNetwork>",
+                    "defaultValue": "new Map([\r\n  [SocialNetworkNames.discord, {\r\n    name: SocialNetworkNames.discord,\r\n    logo: \"assets/discord.png\",\r\n  },],\r\n  [SocialNetworkNames.facebook, {\r\n    name: SocialNetworkNames.facebook,\r\n    logo: \"assets/facebook.png\",\r\n  },],\r\n  [SocialNetworkNames.fansly, {\r\n    name: SocialNetworkNames.fansly,\r\n    logo: \"assets/fansly.png\",\r\n  },],\r\n  [SocialNetworkNames.instagram, {\r\n    name: SocialNetworkNames.instagram,\r\n    logo: \"assets/instagram.png\",\r\n  },],\r\n  [SocialNetworkNames.linkedin, {\r\n    name: SocialNetworkNames.linkedin,\r\n    logo: \"assets/linkedin.png\",\r\n  },],\r\n  [SocialNetworkNames.onlyfans, {\r\n    name: SocialNetworkNames.onlyfans,\r\n    logo: \"assets/onlyfans.png\",\r\n  },],\r\n  [SocialNetworkNames.snapchat, {\r\n    name: SocialNetworkNames.snapchat,\r\n    logo: \"assets/snapchat.png\",\r\n  },],\r\n  [SocialNetworkNames.telegram, {\r\n    name: SocialNetworkNames.telegram,\r\n    logo: \"assets/telegram.png\",\r\n  },],\r\n  [SocialNetworkNames.tiktok, {\r\n    name: SocialNetworkNames.tiktok,\r\n    logo: \"assets/tiktok.png\",\r\n  },],\r\n  [SocialNetworkNames.twitch, {\r\n    name: SocialNetworkNames.twitch,\r\n    logo: \"assets/twitch.png\",\r\n  },],\r\n  [SocialNetworkNames.twitter, {\r\n    name: SocialNetworkNames.twitter,\r\n    logo: \"assets/twitter.png\",\r\n  },],\r\n  [SocialNetworkNames.whatsapp, {\r\n    name: SocialNetworkNames.whatsapp,\r\n    logo: \"assets/whatsapp.png\",\r\n  },],\r\n  [SocialNetworkNames.youtube, {\r\n    name: SocialNetworkNames.youtube,\r\n    logo: \"assets/youtube.png\",\r\n  },],\r\n])"
                 }
             ]
         },
@@ -1881,6 +2187,97 @@
                     "description": "",
                     "file": "projects/nav/src/consts/layout.enum.ts"
                 }
+            ],
+            "projects/social-network-logo/src/consts/social-network-names.enum.ts": [
+                {
+                    "name": "SocialNetworkNames",
+                    "childs": [
+                        {
+                            "name": "discord",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Discord"
+                        },
+                        {
+                            "name": "facebook",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Facebook"
+                        },
+                        {
+                            "name": "fansly",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Fansly"
+                        },
+                        {
+                            "name": "instagram",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Instagram"
+                        },
+                        {
+                            "name": "linkedin",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "LinkedIn"
+                        },
+                        {
+                            "name": "onlyfans",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "OnlyFans"
+                        },
+                        {
+                            "name": "snapchat",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Snapchat"
+                        },
+                        {
+                            "name": "telegram",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "telegram"
+                        },
+                        {
+                            "name": "tiktok",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "TikTok"
+                        },
+                        {
+                            "name": "twitch",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "twitch"
+                        },
+                        {
+                            "name": "twitter",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Twitter"
+                        },
+                        {
+                            "name": "whatsapp",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "WhatsApp"
+                        },
+                        {
+                            "name": "youtube",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Youtube"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/social-network-logo/src/consts/social-network-names.enum.ts"
+                }
             ]
         },
         "groupedTypeAliases": {
@@ -1904,19 +2301,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HeaderComponent>",
                     "file": "projects/header/src/lib/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<LogoComponent>",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1956,6 +2340,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<Page>",
                     "file": "projects/tester-app/src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SocialNetworkLogoComponent>",
+                    "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2185,6 +2595,54 @@
                 "name": "NavItem",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SOCIAL_NETWORKS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/social-network-logo/src/lib/social-network-logo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SocialNetworkLogoComponent",
+                "coveragePercent": 66,
+                "coverageCount": "2/3",
+                "status": "good"
+            },
+            {
+                "filePath": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/social-network-logo/src/models/social-network.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SocialNetwork",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

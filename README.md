@@ -73,6 +73,12 @@ ng g lib <package-name> --prefix hb
 * Add `project`.stories.ts file.
 * Follow the NPM - Create New Package instructions.
 
+## Assets
+To export /assets from a project you'll need to: 
+
+* Add `"assets": ["./assets"],` to the `<package>/ng-package.json` file.
+* Add `{ from: '../../<project>/assets', to: '/assets' }` to staticDirs in `/tester-app/.storybook/main.ts`.
+
 ## NPM
 ### Create New Package
 ```
