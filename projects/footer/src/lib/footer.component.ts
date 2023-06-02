@@ -1,5 +1,4 @@
-import { ViewEncapsulation } from '@angular/compiler';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { LogoComponent } from '@farley911/logo';
 import { NavItem } from '@farley911/nav/models/nav-item.interface';
 
