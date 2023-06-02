@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/angular";
 
 import { SocialNetworkLogoComponent } from "./social-network-logo.component";
-import { SOCIAL_NETWORKS } from "../consts/SOCIAL_NETWORK.consts";
+import { SOCIAL_NETWORK_LOGOS } from "../consts/SOCIAL_NETWORK_LOGOS.consts";
 import { SocialNetworkNames } from "../consts/social-network-names.enum";
 
 const meta: Meta<SocialNetworkLogoComponent> = {
@@ -24,7 +24,7 @@ type Story = StoryObj<SocialNetworkLogoComponent>;
 
 export const Primary: Story = {
   args: {
-    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),
+    socialNetwork: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.instagram),
     width: 35,
   }
 }

@@ -143,7 +143,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": ""
+            "templateData": "<hb-social-network-links></hb-social-network-links>"
         },
         {
             "name": "ButtonComponent",
@@ -915,7 +915,7 @@
         },
         {
             "name": "SocialNetworkLinksComponent",
-            "id": "component-SocialNetworkLinksComponent-c5d7c5e9ebf3c1b6c30ccfe0c7c81c856f29c96e539fd2726d0da9c3c83b49c1dea7655f00dbb4298d124cce422487281c940b350743155a5c0b3a3eee50c98d",
+            "id": "component-SocialNetworkLinksComponent-2c7576da12cf161a9667fc8095b5d1a346dba0993706d043cda566a47cd6118f50b5457d900d5713d645ae2fae9f6256c5192ababb5f9f585d9553e19d0b80a5",
             "file": "projects/social-network-links/src/lib/social-network-links.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -943,11 +943,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'hb-social-network-links',\n  templateUrl: 'social-network-links.component.html',\n  styleUrls: [\n  ]\n})\nexport class SocialNetworkLinksComponent {\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'hb-social-network-links',\n  templateUrl: 'social-network-links.component.html',\n  styleUrls: [ ]\n})\nexport class SocialNetworkLinksComponent {\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "templateData": ""
+            "templateData": "works!!!!"
         },
         {
             "name": "SocialNetworkLogoComponent",
@@ -1013,13 +1013,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-2c2e2411ded3ab9c105768ee2dd768bc5eb53d82882c5fea21c674a465a84e23781fca9557f52d4822d52b95fa090700ae7ea1c710603b84b5def6fb992a1a9d",
+            "id": "module-AppModule-917f30f70025be5d60ffd2959af9cf8f8492ab0416ae8f7dd63272dc535fc06455b98b3909b56de4c3759cfb60a920dfe7559756ebe5a2507e820d6da8ca048a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/tester-app/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { SocialNetworkLinksModule } from 'projects/social-network-links/src/lib/social-network-links.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    SocialNetworkLinksModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1035,7 +1035,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "SocialNetworkLinksModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -1357,16 +1361,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.inline,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      route: '/menu',\r\n      text: 'Menu',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
             },
             {
-                "name": "Inline",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
-            },
-            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1430,16 +1424,6 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<LogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/header/src/lib/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1450,21 +1434,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<NavComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p><p>Available interface(s):<br /><span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+                "type": "Meta<SocialNetworkLinksComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<SocialNetworkLinksComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>',\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+                "type": "Meta<LogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Logo',\r\n  component: LogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { LogoModule } from \\'@farley911/logo\\';</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: []\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1475,6 +1459,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<SocialNetworkLogoComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Logos',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p><p>Exports(s):<br /><span class=\"code-inline\">SOCIAL_NETWORKS</span>, <span class=\"code-inline\">SocialNetworkNames</span>, <span class=\"code-inline\">SocialNetwork</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/nav/src/lib/nav.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NavComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p><p>Available interface(s):<br /><span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1590,6 +1584,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    \r\n  }\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1684,30 +1688,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<LogoComponent>",
-                "file": "projects/logo/src/lib/logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<HeaderComponent>",
                 "file": "projects/header/src/lib/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<NavComponent>",
-                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1728,8 +1710,30 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<LogoComponent>",
+                "file": "projects/logo/src/lib/logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<SocialNetworkLogoComponent>",
                 "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<NavComponent>",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2037,28 +2041,6 @@
                     "defaultValue": "{\r\n  args: {\r\n    layout: LAYOUT.vertical,\r\n    navItems: [{\r\n      route: '/',\r\n      text: 'Home',\r\n    }, {\r\n      children: [{\r\n        route: '/child1',\r\n        text: 'Child 1',\r\n      }, {\r\n        route: '/child2',\r\n        text: 'Child 2',\r\n      }],\r\n      text: 'Nested Item',\r\n    }, {\r\n      route: '/contact',\r\n      text: 'Contact',\r\n    }]\r\n  },\r\n}"
                 }
             ],
-            "projects/social-network-links/src/lib/social-network-links.stories.ts": [
-                {
-                    "name": "Inline",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n  },\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<SocialNetworkLinksComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>',\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
-                }
-            ],
             "projects/tester-app/src/stories/Button.stories.ts": [
                 {
                     "name": "Large",
@@ -2195,6 +2177,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer [navItems]=\"navItems\">\r\n        <p>\r\n          <span class=\"company-name\">Wayne Enterprises</span><br />\r\n          <a href=\"mailto:bruce@wayneenterprises.com\">bruce@wayneenterprises.com</a><br />\r\n          1 Wayne Manor<br />\r\n          (555) 555-5555\r\n        </p>\r\n        <p legalize>\r\n          &copy; Wayne Enterprises 2023\r\n        </p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
+                }
+            ],
+            "projects/social-network-links/src/lib/social-network-links.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SocialNetworkLinksComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    \r\n  }\r\n}"
                 }
             ],
             "projects/logo/src/lib/logo.stories.ts": [
@@ -2430,19 +2434,6 @@
                     "kind": 180
                 }
             ],
-            "projects/logo/src/lib/logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<LogoComponent>",
-                    "file": "projects/logo/src/lib/logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/header/src/lib/header.stories.ts": [
                 {
                     "name": "Story",
@@ -2450,19 +2441,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HeaderComponent>",
                     "file": "projects/header/src/lib/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/nav/src/lib/nav.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<NavComponent>",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2482,6 +2460,19 @@
                     "kind": 180
                 }
             ],
+            "projects/logo/src/lib/logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LogoComponent>",
+                    "file": "projects/logo/src/lib/logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
             "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
                 {
                     "name": "Story",
@@ -2489,6 +2480,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SocialNetworkLogoComponent>",
                     "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/nav/src/lib/nav.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NavComponent>",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2760,7 +2764,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Inline",
+                "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2770,7 +2774,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

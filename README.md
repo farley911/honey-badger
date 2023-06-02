@@ -53,7 +53,7 @@ const meta = {
 ## Storybook
 ### Running Storybook
 ```
-  ng run tester-app:storybook
+ng run tester-app:storybook
 ```
 
 ## Angular Library

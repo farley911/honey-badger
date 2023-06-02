@@ -1,7 +1,7 @@
 import { SocialNetwork } from "../models/social-network.interface";
 import { SocialNetworkNames } from "./social-network-names.enum";
 
-export const SOCIAL_NETWORKS: Map<SocialNetworkNames, SocialNetwork> = new Map([
+export const SOCIAL_NETWORK_LOGOS: Map<SocialNetworkNames, SocialNetwork> = new Map([
   [SocialNetworkNames.discord, {
     name: SocialNetworkNames.discord,
     logo: "assets/discord.png",

@@ -31,6 +31,7 @@
         "dist/social-network-logo"
       ],
       "social-network-links": [
+        "dist/social-network-links",
         "dist/social-network-links"
       ],
     },
