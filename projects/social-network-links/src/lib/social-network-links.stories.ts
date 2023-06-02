@@ -1,9 +1,9 @@
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { SocialNetworkLinksComponent } from "./social-network-links.component";
-import { SocialNetworkNames } from "projects/social-network-logo/src/consts/social-network-names.enum";
 import { SocialNetworkLogoComponent } from "projects/social-network-logo/src/lib/social-network-logo.component";
 import { SOCIAL_NETWORK_LOGOS } from "projects/social-network-logo/src/consts/SOCIAL_NETWORK_LOGOS.consts";
+import { SocialNetworkNames } from "@farley911/social-network-logo";
 
 const meta: Meta<SocialNetworkLinksComponent> = {
   title: 'Honey Badger/Molecules/Social Network Links',

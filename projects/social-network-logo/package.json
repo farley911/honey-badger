@@ -1,6 +1,6 @@
 {
-  "name": "social-network-logo",
-  "version": "0.0.1",
+  "name": "@farley911/social-network-logo",
+  "version": "0.0.6",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0"
@@ -8,5 +8,20 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "description": "This library can be used to implement a Social Network Logo section into a clients application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farley911/honey-badger.git"
+  },
+  "author": "farley911",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farley911/honey-badger/issues"
+  },
+  "homepage": "https://github.com/farley911/honey-badger#readme"
 }
