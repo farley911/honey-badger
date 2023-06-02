@@ -84,6 +84,30 @@
             "methods": []
         },
         {
+            "name": "SocialNetworkLink",
+            "id": "interface-SocialNetworkLink-e7c57728ec397807004cbf2c612974ae4697b3be48b5d5366dcd51c766154937da2b2082b972bd717434342ed9a91d1b5618b84b633090efc7448f5619531cda",
+            "file": "projects/social-network-links/src/models/social-network-link.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { SocialNetwork } from \"projects/social-network-logo/src/models/social-network.interface\";\r\n\r\nexport interface SocialNetworkLink extends SocialNetwork {\r\n  url: string,\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "url",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 168,
+            "methods": [],
+            "extends": "SocialNetwork"
+        },
+        {
             "name": "User",
             "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
             "file": "projects/tester-app/src/stories/User.ts",
@@ -143,7 +167,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<hb-social-network-links></hb-social-network-links>"
+            "templateData": ""
         },
         {
             "name": "ButtonComponent",
@@ -915,7 +939,7 @@
         },
         {
             "name": "SocialNetworkLinksComponent",
-            "id": "component-SocialNetworkLinksComponent-2c7576da12cf161a9667fc8095b5d1a346dba0993706d043cda566a47cd6118f50b5457d900d5713d645ae2fae9f6256c5192ababb5f9f585d9553e19d0b80a5",
+            "id": "component-SocialNetworkLinksComponent-6e14cb56c7fffa668c1487c270ac504e7963a2c9293fa26405c5c024f7530bf803471823d822af4f85640ff18b4bdc5e59da54d4b5b513a80471c5f391dec21f",
             "file": "projects/social-network-links/src/lib/social-network-links.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -923,14 +947,41 @@
             "outputs": [],
             "providers": [],
             "selector": "hb-social-network-links",
-            "styleUrls": [],
+            "styleUrls": [
+                "social-network-links.component.scss"
+            ],
             "styles": [],
             "templateUrl": [
                 "social-network-links.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "logoWidth",
+                    "defaultValue": "35",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nProvides the width for the social network logos. Height is synced.\nDefault is 35px\n",
+                    "description": "<p>Provides the width for the social network logos. Height is synced.\nDefault is 35px</p>\n",
+                    "line": 20,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "socialNetworks",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "rawdescription": "\n\nProvides the social networks to display links for\n",
+                    "description": "<p>Provides the social networks to display links for</p>\n",
+                    "line": 14,
+                    "type": "SocialNetworkLink[]",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -943,11 +994,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'hb-social-network-links',\n  templateUrl: 'social-network-links.component.html',\n  styleUrls: [ ]\n})\nexport class SocialNetworkLinksComponent {\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nimport { SocialNetworkLink } from '../models/social-network-link.interface';\n\n@Component({\n  selector: 'hb-social-network-links',\n  templateUrl: 'social-network-links.component.html',\n  styleUrls: ['social-network-links.component.scss']\n})\nexport class SocialNetworkLinksComponent {\n  /**\n   * Provides the social networks to display links for\n   */\n  @Input({ required: true, }) socialNetworks: SocialNetworkLink[] = [];\n\n  /**\n   * Provides the width for the social network logos. Height is synced.\n   * Default is 35px\n   */\n  @Input() logoWidth: number = 35;\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".social-network-links {\r\n  display: flex;\r\n  flex-direction: row;\r\n  gap: 10px;\r\n}",
+                    "styleUrl": "social-network-links.component.scss"
+                }
+            ],
             "stylesData": "",
-            "templateData": "works!!!!"
+            "templateData": "<section class=\"social-network-links\">\r\n  <ng-container *ngFor=\"let network of socialNetworks\">\r\n    <a [href]=\"network.url\" target=\"_tab\">\r\n      <hb-social-network-logo [socialNetwork]=\"network\" [attr.width]=\"width\"></hb-social-network-logo>\r\n    </a>\r\n  </ng-container>\r\n</section>\r\n"
         },
         {
             "name": "SocialNetworkLogoComponent",
@@ -1013,13 +1069,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-917f30f70025be5d60ffd2959af9cf8f8492ab0416ae8f7dd63272dc535fc06455b98b3909b56de4c3759cfb60a920dfe7559756ebe5a2507e820d6da8ca048a",
+            "id": "module-AppModule-2c2e2411ded3ab9c105768ee2dd768bc5eb53d82882c5fea21c674a465a84e23781fca9557f52d4822d52b95fa090700ae7ea1c710603b84b5def6fb992a1a9d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/tester-app/src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { SocialNetworkLinksModule } from 'projects/social-network-links/src/lib/social-network-links.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    SocialNetworkLinksModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1035,11 +1091,7 @@
                 },
                 {
                     "type": "imports",
-                    "elements": [
-                        {
-                            "name": "SocialNetworkLinksModule"
-                        }
-                    ]
+                    "elements": []
                 },
                 {
                     "type": "exports",
@@ -1434,11 +1486,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<SocialNetworkLinksComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+                "type": "Meta<NavComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p><p>Available interface(s):<br /><span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -1454,21 +1506,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<SocialNetworkLogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Logos',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p><p>Exports(s):<br /><span class=\"code-inline\">SOCIAL_NETWORKS</span>, <span class=\"code-inline\">SocialNetworkNames</span>, <span class=\"code-inline\">SocialNetwork</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
+                "type": "Meta<SocialNetworkLinksComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>'\r\n      }\r\n\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [SocialNetworkLogoComponent],\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<NavComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p><p>Available interface(s):<br /><span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+                "type": "Meta<SocialNetworkLogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Logos',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p><p>Exports(s):<br /><span class=\"code-inline\">SOCIAL_NETWORKS</span>, <span class=\"code-inline\">SocialNetworkNames</span>, <span class=\"code-inline\">SocialNetwork</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -1584,16 +1636,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    \r\n  }\r\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/logo/src/lib/logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1604,11 +1646,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    socialNetworks: [\r\n      {\r\n        name: SocialNetworkNames.facebook,\r\n        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.facebook)?.logo!,\r\n        url: 'http://www.facebook.com'\r\n      }, \r\n      {\r\n        name: SocialNetworkNames.instagram,\r\n        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.instagram)?.logo!,\r\n        url: 'http://www.instagram.com'\r\n      },\r\n      {\r\n        name: SocialNetworkNames.snapchat,\r\n        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.snapchat)?.logo!,\r\n        url: 'http://www.snapchat.com'\r\n      }\r\n    ],\r\n  }\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
             },
             {
                 "name": "Primary",
@@ -1641,10 +1693,10 @@
                 "defaultValue": "{\r\n  args: {\r\n    size: 'small',\r\n    label: 'Button',\r\n  },\r\n}"
             },
             {
-                "name": "SOCIAL_NETWORKS",
+                "name": "SOCIAL_NETWORK_LOGOS",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts",
+                "file": "projects/social-network-logo/src/consts/SOCIAL_NETWORK_LOGOS.consts.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Map<SocialNetworkNames, SocialNetwork>",
@@ -1699,8 +1751,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SocialNetworkLinksComponent>",
-                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                "rawtype": "StoryObj<NavComponent>",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1721,8 +1773,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
-                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "rawtype": "StoryObj<SocialNetworkLinksComponent>",
+                "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1732,8 +1784,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<NavComponent>",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2179,28 +2231,6 @@
                     "defaultValue": "{\r\n  render: (args) => ({\r\n    props: args,\r\n    template:  `\r\n      <hb-footer [navItems]=\"navItems\">\r\n        <p>\r\n          <span class=\"company-name\">Wayne Enterprises</span><br />\r\n          <a href=\"mailto:bruce@wayneenterprises.com\">bruce@wayneenterprises.com</a><br />\r\n          1 Wayne Manor<br />\r\n          (555) 555-5555\r\n        </p>\r\n        <p legalize>\r\n          &copy; Wayne Enterprises 2023\r\n        </p>\r\n      </hb-footer>\r\n    `,\r\n  }),\r\n  args: {\r\n    navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],\r\n  },\r\n}"
                 }
             ],
-            "projects/social-network-links/src/lib/social-network-links.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<SocialNetworkLinksComponent>",
-                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    \r\n  }\r\n}"
-                }
-            ],
             "projects/logo/src/lib/logo.stories.ts": [
                 {
                     "name": "meta",
@@ -2223,6 +2253,28 @@
                     "defaultValue": "{\r\n  args: {\r\n    href: '/',\r\n    logoAlt: 'Wayne Enterprises',\r\n    logoUrl: 'https://1000logos.net/wp-content/uploads/2016/10/Batman-Logo-1939.png',\r\n    logoWidth: 200,\r\n  },\r\n}"
                 }
             ],
+            "projects/social-network-links/src/lib/social-network-links.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SocialNetworkLinksComponent>",
+                    "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Social Network Links',\r\n  component: SocialNetworkLinksComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-links</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLinksModule } from \\'@farley911/social-network-links\\';</span></p>'\r\n      }\r\n\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [SocialNetworkLogoComponent],\r\n    })\r\n  ]\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    socialNetworks: [\r\n      {\r\n        name: SocialNetworkNames.facebook,\r\n        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.facebook)?.logo!,\r\n        url: 'http://www.facebook.com'\r\n      }, \r\n      {\r\n        name: SocialNetworkNames.instagram,\r\n        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.instagram)?.logo!,\r\n        url: 'http://www.instagram.com'\r\n      },\r\n      {\r\n        name: SocialNetworkNames.snapchat,\r\n        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.snapchat)?.logo!,\r\n        url: 'http://www.snapchat.com'\r\n      }\r\n    ],\r\n  }\r\n}"
+                }
+            ],
             "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
                 {
                     "name": "meta",
@@ -2242,7 +2294,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORKS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    socialNetwork: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.instagram),\r\n    width: 35,\r\n  }\r\n}"
                 }
             ],
             "projects/tester-app/.storybook/preview.ts": [
@@ -2257,12 +2309,12 @@
                     "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/,\r\n      },\r\n    },\r\n    options: {\r\n      storySort: {\r\n        order: ['Honey Badger', ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages']],\r\n      },\r\n    },\r\n  },\r\n  decorators: [componentWrapperDecorator((story) => `<div class='mat-typography'>${story}</div>`)],\r\n}"
                 }
             ],
-            "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts": [
+            "projects/social-network-logo/src/consts/SOCIAL_NETWORK_LOGOS.consts.ts": [
                 {
-                    "name": "SOCIAL_NETWORKS",
+                    "name": "SOCIAL_NETWORK_LOGOS",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts",
+                    "file": "projects/social-network-logo/src/consts/SOCIAL_NETWORK_LOGOS.consts.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Map<SocialNetworkNames, SocialNetwork>",
@@ -2447,13 +2499,13 @@
                     "kind": 180
                 }
             ],
-            "projects/social-network-links/src/lib/social-network-links.stories.ts": [
+            "projects/nav/src/lib/nav.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<SocialNetworkLinksComponent>",
-                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                    "rawtype": "StoryObj<NavComponent>",
+                    "file": "projects/nav/src/lib/nav.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2473,6 +2525,19 @@
                     "kind": 180
                 }
             ],
+            "projects/social-network-links/src/lib/social-network-links.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SocialNetworkLinksComponent>",
+                    "file": "projects/social-network-links/src/lib/social-network-links.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
             "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
                 {
                     "name": "Story",
@@ -2480,19 +2545,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SocialNetworkLogoComponent>",
                     "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "projects/nav/src/lib/nav.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<NavComponent>",
-                    "file": "projects/nav/src/lib/nav.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2542,7 +2594,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 8,
+        "count": 9,
         "status": "low",
         "files": [
             {
@@ -2755,9 +2807,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "SocialNetworkLinksComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
+                "coveragePercent": 66,
+                "coverageCount": "2/3",
+                "status": "good"
             },
             {
                 "filePath": "projects/social-network-links/src/lib/social-network-links.stories.ts",
@@ -2780,11 +2832,20 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/social-network-logo/src/consts/SOCIAL_NETWORK.consts.ts",
+                "filePath": "projects/social-network-links/src/models/social-network-link.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SocialNetworkLink",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/social-network-logo/src/consts/SOCIAL_NETWORK_LOGOS.consts.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SOCIAL_NETWORKS",
+                "name": "SOCIAL_NETWORK_LOGOS",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

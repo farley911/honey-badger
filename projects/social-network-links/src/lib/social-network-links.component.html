@@ -1,7 +1,7 @@
 <section class="social-network-links">
   <ng-container *ngFor="let network of socialNetworks">
-    <a [href]="network.url">
-      <hb-social-network-logo [socialNetwork]="network"></hb-social-network-logo>
+    <a [href]="network.url" target="_tab">
+      <hb-social-network-logo [socialNetwork]="network" [attr.width]="width"></hb-social-network-logo>
     </a>
   </ng-container>
 </section>
