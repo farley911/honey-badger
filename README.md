@@ -56,7 +56,7 @@ const meta = {
 ng run tester-app:storybook
 ```
 ### Storybook Troubleshooting
-* Make sure to npm install your module into Honey Badger so that Storybook can find files it exports. **(This might not be valid)**
+* Make sure to npm install your module into Honey Badger so that Storybook can find files it exports.
 * Do not use @farley imports inside your *.stories.ts files
 
 ## Angular Library
