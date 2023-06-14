@@ -57,7 +57,7 @@ ng run tester-app:storybook
 ```
 ### Storybook Troubleshooting
 * Make sure to npm install your module into Honey Badger so that Storybook can find files it exports.
-* Do not use @farley imports inside your *.stories.ts files
+* Do not use `@farley911` imports inside your `*.stories.ts` files
 
 ## Angular Library
 ### Create A New Library(Package)
