@@ -3,12 +3,16 @@
   flex: 1;
   flex-direction: row;
 
-  :nth-child(1) {
+  >:nth-child(1) {
     flex: 1;
   }
 
   .company-name {
     font-weight: bold;
+  }
+
+  .social-networks {
+    float: right;
   }
 
   [legalize] {

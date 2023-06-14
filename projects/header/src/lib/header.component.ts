@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Layout as NavLayout } from '@farley911/nav';
+import { LAYOUT as NAV_LAYOUT } from '@farley911/nav';
 import { NavItem } from '@farley911/nav/models/nav-item.interface';
 
 import { LAYOUT } from '../consts/layout.enum';
@@ -38,8 +38,9 @@ export class HeaderComponent {
 
   /**
    * Width used for the logo (aspect ratio will be maintained).
+   * Default is 75px
    */
-  @Input() logoWidth = '';
+  @Input() logoWidth = 75;
   
   /**
    * NavItems tems to display to the user.
@@ -49,7 +50,7 @@ export class HeaderComponent {
   /**
    * Used by the nav to orient itself.
    */
-  @Input() navLayout: NavLayout = NavLayout.inline;
+  @Input() navLayout: NAV_LAYOUT = NAV_LAYOUT.inline;
 
   /**
    * Optional subheading for clients with one.
@@ -64,5 +65,5 @@ export class HeaderComponent {
   /**
    * Used by the nav to orient itself.
    */
-  NavLayout: typeof NavLayout = NavLayout;
+  NavLayout: typeof NAV_LAYOUT = NAV_LAYOUT;
 }

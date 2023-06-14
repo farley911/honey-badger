@@ -1,12 +1,15 @@
 {
   "name": "@farley911/social-network-logo",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "exports": {
+    "./consts/SOCIAL_NETWORK_LOGOS.consts": "./consts/SOCIAL_NETWORK_LOGOS.consts"
   },
   "sideEffects": false,
   "description": "This library can be used to implement a Social Network Logo section into a clients application.",

@@ -4,9 +4,12 @@
     <ng-content select="[legalize]"></ng-content>
   </div>
   <div>
-    <hb-nav [navItems]="navItems"></hb-nav>
-    <div class="social-networks">
-      
+    <hb-nav [navItems]="navItems" *ngIf="navItems?.length"></hb-nav>
+    <div class="social-networks" *ngIf="socialNetworks?.length">
+      <hb-social-network-links
+        [socialNetworks]="socialNetworks"
+        [logoWidth]="socialNetworkLogoWidth"
+      ></hb-social-network-links>
     </div>
   </div>
 </section>

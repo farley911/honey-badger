@@ -55,6 +55,9 @@ const meta = {
 ```
 ng run tester-app:storybook
 ```
+### Storybook Troubleshooting
+* Make sure to npm install your module into Honey Badger so that Storybook can find files it exports. **(This might not be valid)**
+* Do not use @farley imports inside your *.stories.ts files
 
 ## Angular Library
 ### Create A New Library(Package)
@@ -114,3 +117,6 @@ Update package.json with the correct verions and run:
 cd <client name>
 npm i
 ```
+
+## Troubleshooting
+* BS 'selector' error in Storybook? Delete the `/node_modules` directory from the package and restart Storybook and don't run `npm i` on a package directory again.

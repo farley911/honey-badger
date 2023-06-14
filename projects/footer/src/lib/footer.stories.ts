@@ -1,11 +1,15 @@
 import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from "@storybook/angular";
-import { LogoComponent } from "@farley911/logo";
-import { NavComponent } from "@farley911/nav";
-
-import { FooterComponent } from "./footer.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatButtonModule } from "@angular/material/button";
 import { MatMenuModule } from "@angular/material/menu";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { FooterComponent } from "./footer.component";
+import { LogoComponent } from "projects/logo/src/lib/logo.component";
+import { NavComponent } from "projects/nav/src/lib/nav.component";
+import { SocialNetworkNames } from "projects/social-network-logo/src/consts/social-network-names.enum";
+import { SOCIAL_NETWORK_LOGOS } from "projects/social-network-logo/src/consts/SOCIAL_NETWORK_LOGOS.consts";
+import { SocialNetworkLinksComponent } from "projects/social-network-links/src/lib/social-network-links.component";
+import { SocialNetworkLogoComponent } from "projects/social-network-logo/src/lib/social-network-logo.component";
 
 const meta: Meta<FooterComponent> = {
   title: 'Honey Badger/Organisms/Footer',
@@ -22,7 +26,7 @@ const meta: Meta<FooterComponent> = {
   },
   decorators: [
     moduleMetadata({
-      declarations: [LogoComponent, NavComponent],
+      declarations: [LogoComponent, NavComponent, SocialNetworkLinksComponent, SocialNetworkLogoComponent],
       imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule],
     }),
     componentWrapperDecorator(FooterComponent),
@@ -37,7 +41,7 @@ export const Primary: Story = {
   render: (args) => ({
     props: args,
     template:  `
-      <hb-footer [navItems]="navItems">
+      <hb-footer [navItems]="navItems" [socialNetworks]="socialNetworks">
         <p>
           <span class="company-name">Wayne Enterprises</span><br />
           <a href="mailto:bruce@wayneenterprises.com">bruce@wayneenterprises.com</a><br />
@@ -52,5 +56,21 @@ export const Primary: Story = {
   }),
   args: {
     navItems: [{route: '/', text: 'Home'}, {route: '/menu', text: 'Menu'}, {route: '/contact', text: 'Contact'}],
+    socialNetworks: [
+      {
+        name: SocialNetworkNames.facebook,
+        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.facebook)?.logo!,
+        url: 'http://www.facebook.com'
+      }, 
+      {
+        name: SocialNetworkNames.instagram,
+        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.instagram)?.logo!,
+        url: 'http://www.instagram.com'
+      },
+      {
+        name: SocialNetworkNames.snapchat,
+        logo: SOCIAL_NETWORK_LOGOS.get(SocialNetworkNames.snapchat)?.logo!,
+        url: 'http://www.snapchat.com'
+      }]
   },
 }
