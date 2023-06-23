@@ -2,8 +2,6 @@ import { Component, Input } from '@angular/core';
 import { LAYOUT as NAV_LAYOUT } from '@farley911/nav';
 import { NavItem } from '@farley911/nav/models/nav-item.interface';
 
-import { LAYOUT } from '../consts/layout.enum';
-
 @Component({
   selector: 'hb-header',
   templateUrl: 'header.component.html',
@@ -24,7 +22,7 @@ export class HeaderComponent {
   /**
    * The layout for the component.
    */
-  @Input() layout: LAYOUT = LAYOUT.inline;
+  @Input() layout: number = 1;
 
   /**
    * Name displayed for the alt text.
@@ -56,11 +54,6 @@ export class HeaderComponent {
    * Optional subheading for clients with one.
    */
   @Input() subheading = '';
-
-  /**
-   * Used by the view to map the enum to the input value.
-   */
-  Layout: typeof LAYOUT = LAYOUT;
 
   /**
    * Used by the nav to orient itself.

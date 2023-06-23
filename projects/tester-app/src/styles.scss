@@ -2,10 +2,27 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 .code-inline {
   background-color: #e4e4e4;
   border-radius: 3px;
   font-size: .8rem !important; // Overwrites storybook defaults
   font-style: italic;
   padding: 2px 5px;
+}
+
+.layouts {
+  margin: 100px;
+
+  .wireframe {
+    border: 1px solid #515151;
+    display: flex;
+    margin-bottom: 25px;
+    
+    & div {
+      border: 1px solid #515151;
+      flex: 1;
+      padding: 20px;
+    }
+  }
 }

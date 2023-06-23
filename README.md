@@ -57,6 +57,7 @@ ng run tester-app:storybook
 ```
 ### Storybook Troubleshooting
 * **DO** `npm i` your module into the Honey Badger project so that Storybook can find the exported files.
+* **DO** render your template in the `*.stories.ts` file _IF_ you used content projection in your library. (Ref: [Footer Story](https://github.com/farley911/honey-badger/blob/main/projects/footer/src/lib/footer.stories.ts))
 * **DO NOT** inject code from any `@farley911/*` directories inside your `*.stories.ts` files. Inject your code from the `/projects/<project>/...` directory instead.
 
 ## Angular Library

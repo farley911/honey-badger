@@ -1,5 +1,14 @@
-<header>
-  <section class="branding" [ngClass]="{ vertical: layout === Layout.vertical }">
+<header [ngSwitch]="layout">
+  <ng-container *ngSwitchCase="1">
+    <ng-container *ngTemplateOutlet="layoutOne"></ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="2">
+    <ng-container *ngTemplateOutlet="layoutTwo"></ng-container>
+  </ng-container>
+</header>
+
+<ng-template #layoutOne>
+  <section class="branding">
     <hb-logo *ngIf="!!logoUrl" [logoUrl]="logoUrl" [logoWidth]="logoWidth" [logoAlt]="logoAlt"></hb-logo>
     <div class="heading" *ngIf="!!heading">
       <h1>{{heading}}</h1>
@@ -7,4 +16,17 @@
     </div>
   </section>
   <hb-nav *ngIf="!!navItems.length" [navItems]="navItems" [layout]="NavLayout.inline"></hb-nav>
-</header>
+</ng-template>
+
+<ng-template #layoutTwo>
+  <section class="layout-two">
+    <section class="branding">
+      <hb-logo *ngIf="!!logoUrl" [logoUrl]="logoUrl" [logoWidth]="logoWidth" [logoAlt]="logoAlt"></hb-logo>
+      <div class="heading" *ngIf="!!heading">
+        <h1>{{heading}}</h1>
+        <h2>{{subheading}}</h2>
+      </div>
+    </section>
+    <hb-nav *ngIf="!!navItems.length" [navItems]="navItems" [layout]="NavLayout.inline"></hb-nav>
+  </section>
+</ng-template>

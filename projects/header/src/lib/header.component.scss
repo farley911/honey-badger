@@ -1,13 +1,7 @@
 .branding {
   display: flex;
   flex-direction: row;
-
-  &.vertical {
-    display: inline-block;
-    flex-direction: column;
-    margin-right: 20px;
-    text-align: center;
-  }
+  margin-left: 13px;
 
   .heading {
     align-items: flex-start;
@@ -31,11 +25,19 @@
     }
   }
 
-  &.vertical hb-logo {
-    padding: 0px;
-  }
-
   hb-logo {
     padding: 10px 20px 10px 0px;
+  }
+}
+
+.layout-two {
+  .branding {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  hb-nav  {
+    text-align: center;
   }
 }
