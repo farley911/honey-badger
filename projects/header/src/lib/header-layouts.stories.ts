@@ -1,4 +1,4 @@
-import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 import HeaderLayoutsComponent from "./header-layouts.component";
 
 const meta: Meta<HeaderLayoutsComponent> = {
@@ -7,11 +7,7 @@ const meta: Meta<HeaderLayoutsComponent> = {
   parameters: {
     layout: 'fullscreen',
   },
-  decorators: [
-    moduleMetadata({
-      // imports: [CommonModule],
-    }),
-  ],
+  tags: ['autodocs'],
 };
 
 export default meta;
