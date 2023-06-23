@@ -7,8 +7,8 @@ import { Component } from "@angular/core";
       <h2>Layout 1</h2>
       <div class="wireframe" style="flex-direction: column">
         <section style="display: flex; flex-direction: row">
-          <div>Logo</div>
-          <div style="flex:4">
+          <div style="display: flex; align-items: center; justify-content: center">Logo</div>
+          <div style="flex:10">
             <h3>Heading</h3>
             <h4>Subheading</h4>
           </div>

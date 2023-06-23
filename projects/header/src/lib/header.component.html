@@ -12,7 +12,7 @@
     <hb-logo *ngIf="!!logoUrl" [logoUrl]="logoUrl" [logoWidth]="logoWidth" [logoAlt]="logoAlt"></hb-logo>
     <div class="heading" *ngIf="!!heading">
       <h1>{{heading}}</h1>
-      <h2>{{subheading}}</h2>
+      <h2 *ngIf="!!subheading">{{subheading}}</h2>
     </div>
   </section>
   <hb-nav *ngIf="!!navItems.length" [navItems]="navItems" [layout]="NavLayout.inline"></hb-nav>
@@ -24,7 +24,7 @@
       <hb-logo *ngIf="!!logoUrl" [logoUrl]="logoUrl" [logoWidth]="logoWidth" [logoAlt]="logoAlt"></hb-logo>
       <div class="heading" *ngIf="!!heading">
         <h1>{{heading}}</h1>
-        <h2>{{subheading}}</h2>
+        <h2 *ngIf="!!subheading">{{subheading}}</h2>
       </div>
     </section>
     <hb-nav *ngIf="!!navItems.length" [navItems]="navItems" [layout]="NavLayout.inline"></hb-nav>
