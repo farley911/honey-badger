@@ -9,10 +9,19 @@ You know what Honey Badger is; it's Fight Club.
 2. Clone the repo
 3. Create the client app in the repo
   ```
-  ng new <client-name>
+  C:\Users\eric\OneDrive\Desktop\GitHub\gig_work\honey-badger\generate-project.bat
   ```
-  * `y` to routing is requested.
-  * `SCSS` for styles.    
+  * Enter the name of the project.
+  * Say `y` to routing.
+  * Select `SCSS` for styles.    
+  * Enter the projects the customer requested (comma seperated).
+  > OPTIONS:
+    footer,
+    header,
+    logo,
+    social-network-links,
+    social-network-logo,
+    social-network-logo
 4. Update the README with the clients information.
   * [Example README](https://github.com/farley911/honey-badger/wiki/Client-App-README-Example)
 5. Install Material in `./<client-name>`

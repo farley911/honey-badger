@@ -1590,21 +1590,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<SocialNetworkLogoComponent>",
-                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Logos',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p><p>Exports(s):<br /><span class=\"code-inline\">SOCIAL_NETWORKS</span>, <span class=\"code-inline\">SocialNetworkNames</span>, <span class=\"code-inline\">SocialNetwork</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<NavComponent>",
                 "defaultValue": "{\r\n  title: 'Honey Badger/Molecules/Nav',\r\n  component: NavComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/nav</span></p><p>Import Module:<br /><span class=\"code-inline\">import { NavModule } from \\'@farley911/nav\\';</span></p><p>Available const(s):<br /><span class=\"code-inline\">LAYOUT</span></p><p>Available interface(s):<br /><span class=\"code-inline\">NavItem</span></p>'\r\n      }\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n  argTypes: {layout: { control: 'select', options: [ ...Object.keys(LAYOUT) ]},},\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [],\r\n      imports: [MatButtonModule, MatMenuModule, BrowserAnimationsModule]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SocialNetworkLogoComponent>",
+                "defaultValue": "{\r\n  title: 'Honey Badger/Atoms/Social Network Logos',\r\n  component: SocialNetworkLogoComponent,\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: '<p>Install Module:<br /><span class=\"code-inline\">npm i @farley911/social-network-logo</span></p><p>Import Module:<br /><span class=\"code-inline\">import { SocialNetworkLogoModule } from \\'@farley911/social-network-logo\\';</span></p><p>Exports(s):<br /><span class=\"code-inline\">SOCIAL_NETWORKS</span>, <span class=\"code-inline\">SocialNetworkNames</span>, <span class=\"code-inline\">SocialNetwork</span></p>'\r\n      }\r\n\r\n    }\r\n  },\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -1828,8 +1828,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
-                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
+                "rawtype": "StoryObj<NavComponent>",
+                "file": "projects/nav/src/lib/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1839,8 +1839,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<NavComponent>",
-                "file": "projects/nav/src/lib/nav.stories.ts",
+                "rawtype": "StoryObj<SocialNetworkLogoComponent>",
+                "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2525,19 +2525,6 @@
                     "kind": 180
                 }
             ],
-            "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<SocialNetworkLogoComponent>",
-                    "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "projects/nav/src/lib/nav.stories.ts": [
                 {
                     "name": "Story",
@@ -2545,6 +2532,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<NavComponent>",
                     "file": "projects/nav/src/lib/nav.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "projects/social-network-logo/src/lib/social-network-logo.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SocialNetworkLogoComponent>",
+                    "file": "projects/social-network-logo/src/lib/social-network-logo.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
